@@ -1,6 +1,3 @@
-const SUPABASE_URL = 'https://mibitvmvognqfzzhobqg.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_jOAdRf4yNBzsL2KC-8RsKQ_QtKRXFLo';
-const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 async function handleSurvey(event) {
     event.preventDefault();
@@ -21,17 +18,25 @@ async function handleSurvey(event) {
     };
 
     try {
-        const { error } = await _supabase
-            .from('satisfaction_surveys')
-            .insert([surveyData]);
+        const response = await fetch('../backend/survey.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(surveyData)
+        });
 
-        if (error) throw error;
+        const result = await response.json();
 
-        alert("Thank you for your feedback! Survey submitted");
-        form.reset();
+        if (result.success) {
+            alert("Thank you for your feedback! Survey submitted");
+            form.reset();
+        } else {
+            alert("Error: " + result.error);
+        }
 
     } catch (error) {
-        console.error("Error:", error.message);
-        alert("The survey could not be sent:" + error.message);
+        console.error("Error:", error);
+        alert("Connection error");
     }
 }

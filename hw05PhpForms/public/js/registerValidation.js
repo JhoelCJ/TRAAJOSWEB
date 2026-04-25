@@ -1,6 +1,3 @@
-const SUPABASE_URL = 'https://mibitvmvognqfzzhobqg.supabase.co'; 
-const SUPABASE_KEY = 'sb_publishable_jOAdRf4yNBzsL2KC-8RsKQ_QtKRXFLo';
-const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 function calculateAge() {
     const birthDateInput = document.getElementById("birth_date");
@@ -74,30 +71,34 @@ function validateAndSubmitForm(event) {
 
     if (errorElement) errorElement.textContent = "";
 
-    submitToSupabase(form);
+    submitToBackend(form);
 }
 
-async function submitToSupabase(form) {
+async function submitToBackend(form) {
     const formData = new FormData(form);
-    
+
     const userData = {
         first_name: formData.get('first_name'),
         last_name: formData.get('last_name'),
-        id_card: formData.get('id_number'), 
+        id_card: formData.get('id_number'),
         birth_date: formData.get('birth_date'),
         age: parseInt(formData.get('age')),
         address: formData.get('address'),
         phone_number: formData.get('phone')
     };
 
-    const { data, error } = await _supabase
-        .from('users') 
-        .insert([userData]);
+    const response = await fetch('../backend/register.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData)
+    });
 
-    if (error) {
-        alert("Error: " + error.message);
-    } else {
-        alert("Successful registration in the database");
+    const result = await response.json();
+
+    if (result.success) {
+        alert("Registro exitoso");
         form.reset();
+    } else {
+        alert("Error: " + result.error);
     }
 }
