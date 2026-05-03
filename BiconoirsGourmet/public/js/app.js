@@ -13,7 +13,8 @@ createApp({
             newDish: {
                 name: '',
                 price: ''
-            }
+            },
+            grid: null
         }
     },
 
@@ -25,9 +26,27 @@ createApp({
 
             if (error) {
                 console.error(error);
-            } else {
-                this.dishes = data;
+                return;
             }
+
+            this.dishes = data;
+            this.renderTable();
+        },
+
+        renderTable() {
+            if (this.grid) {
+                this.grid.destroy();
+            }
+
+            this.grid = new gridjs.Grid({
+                columns: ["Name", "Price"],
+                data: this.dishes.map(d => [d.nombre, d.precio]),
+                search: true,
+                pagination: {
+                    limit: 5
+                },
+                sort: true
+            }).render(document.getElementById("table"));
         },
 
         async addDish() {
@@ -43,12 +62,9 @@ createApp({
                     precio: this.newDish.price
                 }]);
 
-            if (error) {
-                console.error(error);
-            } else {
+            if (!error) {
                 this.fetchDishes();
-                this.newDish.name = '';
-                this.newDish.price = '';
+                this.newDish = { name: '', price: '' };
             }
         }
     },

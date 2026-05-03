@@ -6,6 +6,7 @@
     <title>Menú del Restaurante</title>
 	<link rel="stylesheet" href="../public/css/style_menu.css">
     <link rel="stylesheet" href="../public/css/style_index.css">
+    <link href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -28,37 +29,19 @@
 
     <h1>Restaurant Menu</h1>
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr v-for="dish in dishes" :key="dish.id">
-                <td>{{ dish.nombre }}</td>
-                <td>{{ dish.precio }}</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <hr>
+    <div id="table"></div>
 
     <h3>Add Dish</h3>
-
     <input v-model="newDish.name" placeholder="Dish name">
     <input v-model="newDish.price" type="number" placeholder="Price">
-
     <button @click="addDish">Add</button>
-
+    
 </div>
 
 <script src="https://unpkg.com/vue@3"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-
-<script src="../Public/js/app.js"></script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script src="../public/js/app.js"></script>
 
 </body>
 </html>
