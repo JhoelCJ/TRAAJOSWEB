@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú del Restaurante</title>
 	<link rel="stylesheet" href="../public/css/style_menu.css">
+    <link rel="stylesheet" href="../public/css/style_index.css">
 </head>
 <body>
 
     <div class="main-container">
         
         <header>
-            <div class="logo">LOGO</div>
+            <div class="logo">
+                <a href="index.php">
+                    <img src="../public/img/logoRestaurantGreen.png" alt="Logo Biconoir's" class="logo-img">
+                </a>
+            </div>
             <nav>
                 <a href="../index.php">HOME</a>
                 <a href="menu.php">MENU</a>

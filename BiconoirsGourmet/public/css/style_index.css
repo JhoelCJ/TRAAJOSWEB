@@ -26,10 +26,39 @@ header{
     backdrop-filter: blur(10px);
 }
 
-.logo{
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #c59d5f;
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: auto; 
+    width: 180px;
+    max-width: 100%;
+    transition: transform 0.3s ease; 
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 10px 20px;
+    }
+
+    .logo-img {
+        width: 130px;
+    }
+    
+    nav {
+        gap: 10px;
+    }
+    
+    nav a {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
 }
 
 nav{
@@ -52,7 +81,7 @@ nav a::after{
     bottom: -5px;
     width: 0%;
     height: 2px;
-    background: #c59d5f;
+    background: #2e8b2e;
     transition: 0.3s;
 }
 
@@ -61,12 +90,12 @@ nav a:hover::after{
 }
 
 .btn-reserva{
-    border: 1px solid #c59d5f;
+    border: 1px solid #2e8b2e;
     border-radius: 5px;
 }
 
 .btn-reserva:hover{
-    background: #c59d5f;
+    background: #2e8b2e;
     color: black;
 }
 
@@ -115,7 +144,7 @@ nav a:hover::after{
 }
 
 .hero-buttons a:hover{
-    background: #c59d5f;
-    border-color: #c59d5f;
+    background: #2e8b2e;
+    border-color: #2e8b2e;
     color: black;
 }

@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../public/css/style_forms.css">
     <link rel="stylesheet" href="../public/css/style_menu.css">
+    <link rel="stylesheet" href="../public/css/style_index.css">
 </head>
 
 <body>
     
 <header>
-    <div class="logo">LOGO</div>
+    <div class="logo">
+            <a href="index.php">
+                <img src="../public/img/logoRestaurantGreen.png" alt="Logo Biconoir's" class="logo-img">
+            </a>
+    </div>
     <nav>
         <a href="../index.php">HOME</a>
         <a href="menu.php">MENU</a>

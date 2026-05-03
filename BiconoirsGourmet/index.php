@@ -9,7 +9,11 @@
     <div class="main-container">
         
         <header>
-            <div class="logo">LOGO</div>
+            <div class="logo">
+                <a href="index.php">
+                    <img src="public/img/logoRestaurantGreen.png" alt="Logo Biconoir's" class="logo-img">
+                </a>
+            </div>
             <nav>
                 <a href="index.php">HOME</a>
                 <a href="views/menu.php">MENU</a>
@@ -23,7 +27,7 @@
 
         <section class="hero">
             <div class="hero-content">
-                <h1>WELCOME TO BICONOIRS GOURMET</h1>
+                <h1>WELCOME TO BICONOIR'S RESTAURANT</h1>
                 <div class="hero-buttons">
                     <a href="views/reservationForm.php">RESERVATIONS</a>
                     <a href="views/menu.php">CHECK OUR MENU</a>

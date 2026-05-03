@@ -24,7 +24,7 @@ body{
 .form-box h1{
     text-align: center;
     margin-bottom: 25px;
-    color: #c59d5f;
+    color: #2e8b2e;
     letter-spacing: 2px;
 }
 
@@ -36,7 +36,7 @@ body{
 }
 
 .form-section legend{
-    color: #c59d5f;
+    color: #2e8b2e;
     padding: 0 10px;
 }
 
@@ -63,7 +63,7 @@ body{
 }
 
 .form-group input:focus{
-    border-color: #c59d5f;
+    border-color: #2e8b2e;
 }
 
 .readonly{
@@ -81,14 +81,14 @@ body{
     cursor: pointer;
     margin: 5px;
     font-size: 14px;
-    border: 1px solid #c59d5f;
+    border: 1px solid #2e8b2e;
     background: transparent;
-    color: #c59d5f;
+    color: #2e8b2e;
     transition: 0.3s;
 }
 
 .btn:hover{
-    background: #c59d5f;
+    background: #2e8b2e;
     color: black;
 }
 

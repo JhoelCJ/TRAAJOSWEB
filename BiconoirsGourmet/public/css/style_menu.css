@@ -29,7 +29,7 @@ header{
 .logo{
     font-size: 1.8rem;
     font-weight: bold;
-    color: #c59d5f;
+    color: #2e8b2e;
 }
 
 nav{
@@ -52,7 +52,7 @@ nav a::after{
     bottom: -5px;
     width: 0%;
     height: 2px;
-    background: #c59d5f;
+    background: #2e8b2e;
     transition: 0.3s;
 }
 
@@ -71,7 +71,7 @@ nav a:hover::after{
     margin: 40px 0;
     font-size: 2.5rem;
     letter-spacing: 3px;
-    color: #c59d5f;
+    color: #2e8b2e;
 }
 
 .menu-section{
@@ -82,7 +82,7 @@ nav a:hover::after{
     margin-bottom: 20px;
     font-size: 1.5rem;
     letter-spacing: 2px;
-    border-left: 4px solid #c59d5f;
+    border-left: 4px solid #2e8b2e;
     padding-left: 10px;
 }
 
@@ -102,7 +102,7 @@ nav a:hover::after{
 
 .dish-card:hover{
     transform: translateY(-5px);
-    border-color: #c59d5f;
+    border-color: #2e8b2e;
 }
 
 .dish-header{
@@ -113,7 +113,7 @@ nav a:hover::after{
 }
 
 .dish-price{
-    color: #c59d5f;
+    color: #2e8b2e;
 }
 
 .dish-description{
