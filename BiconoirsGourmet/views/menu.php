@@ -9,106 +9,56 @@
 </head>
 <body>
 
-    <div class="main-container">
-        
-        <header>
-            <div class="logo">
-                <a href="../index.php">
-                    <img src="../public/img/logoRestaurantGreen.png" alt="Logo Biconoir's" class="logo-img">
-                </a>
-            </div>
-            <nav>
-                <a href="../index.php">Inicio</a>
-                <a href="menu.php">Ver menú</a>
-                <a href="reservationForm.php" class="btn-reserva">Reservaciones</a>
-                <a href="#">Acerca de nosotros</a>
-                <a href="#">Encuentranos</a>
-                <a href="satisfactionForm.php">Encuestas de satisfacción</a>
-                <a href="registerForm.php">Registrate</a>
-                <a href="loginForm.php">Iniciar sesión</a>
-            </nav>
-        </header>
-
-        <h1 class="page-title">Our Menu</h1>
-
-        <section class="menu-section">
-            <h2 class="section-title">Entrance</h2>
-            <div class="dishes-grid">
-                
-                <article class="dish-card">
-                    <div class="dish-header">
-                        <span>Name Product</span>
-                        <span class="dish-price">Price</span>
-                    </div>
-                    <p class="dish-description">Description</p>
-                </article>
-
-                <article class="dish-card">
-                    <div class="dish-header">
-                        <span>Name Product</span>
-                        <span class="dish-price">Price</span>
-                    </div>
-                    <p class="dish-description">Description</p>
-                </article>
-
-            </div>
-        </section>
-
-        <section class="menu-section">
-            <h2 class="section-title">Main dishes</h2>
-            <div class="dishes-grid">
-                
-                <article class="dish-card">
-                    <div class="dish-header">
-                        <span>Name Product</span>
-                        <span class="dish-price">Price</span>
-                    </div>
-                    <p class="dish-description">Description</p>
-                </article>
-
-                <article class="dish-card">
-                    <div class="dish-header">
-                        <span>Name Product</span>
-                        <span class="dish-price">Price</span>
-                    </div>
-                    <p class="dish-description">Description</p>
-                </article>
-
-                <article class="dish-card">
-                    <div class="dish-header">
-                        <span>Name Product</span>
-                        <span class="dish-price">Price</span>
-                    </div>
-                    <p class="dish-description">Description</p>
-                </article>
-
-            </div>
-        </section>
-
-        <section class="menu-section">
-            <h2 class="section-title">Drinks</h2>
-            <div class="dishes-grid">
-                
-                <article class="dish-card">
-                    <div class="dish-header">
-                        <span>Name Product</span>
-                        <span class="dish-price">Price</span>
-                    </div>
-                    <p class="dish-description">Description</p>
-                </article>
-
-                <article class="dish-card">
-                    <div class="dish-header">
-                        <span>Name Product</span>
-                        <span class="dish-price">Price</span>
-                    </div>
-                    <p class="dish-description">Description</p>
-                </article>
-
-            </div>
-        </section>
-
+<header>
+    <div class="logo">
+        <a href="../index.php">
+            <img src="../public/img/logoRestaurantGreen.png" alt="Logo Biconoir's" class="logo-img">
+        </a>
     </div>
+    <nav>
+        <a href="menu.php">Ver menú</a>
+        <a href="reservationForm.php" class="btn-reserva">Reservaciones</a>
+        <a href="satisfactionForm.php">Encuestas de satisfacción</a>
+        <a href="registerForm.php">Registrate</a>
+		<a href="loginForm.php">Iniciar sesión</a>
+    </nav>
+</header>
+
+<div id="app">
+
+    <h1>Restaurant Menu</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr v-for="dish in dishes" :key="dish.id">
+                <td>{{ dish.nombre }}</td>
+                <td>{{ dish.precio }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Add Dish</h3>
+
+    <input v-model="newDish.name" placeholder="Dish name">
+    <input v-model="newDish.price" type="number" placeholder="Price">
+
+    <button @click="addDish">Add</button>
+
+</div>
+
+<script src="https://unpkg.com/vue@3"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script src="../Public/js/app.js"></script>
 
 </body>
 </html>

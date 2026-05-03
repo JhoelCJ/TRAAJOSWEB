@@ -15,11 +15,8 @@
                 </a>
             </div>
             <nav>
-                <a href="index.php">Inicio</a>
                 <a href="views/menu.php">Ver menú</a>
                 <a href="views/reservationForm.php" class="btn-reserva">Reservaciones</a>
-                <a href="#">Acerca de nosotros</a>
-                <a href="#">Encuentranos</a>
                 <a href="views/satisfactionForm.php">Encuestas de satisfacción</a>
                 <a href="views/registerForm.php">Registrate</a>
 				<a href="views/loginForm.php">Iniciar sesión</a>
