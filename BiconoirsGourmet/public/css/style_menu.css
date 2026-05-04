@@ -120,3 +120,7 @@ nav a:hover::after{
     font-size: 0.9rem;
     color: #ccc;
 }
+
+#table{
+    background: #9b9b9b;
+}
