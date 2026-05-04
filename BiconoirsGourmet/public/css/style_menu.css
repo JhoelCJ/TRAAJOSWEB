@@ -7,7 +7,7 @@
 body{
     font-family: 'Segoe UI', sans-serif;
     background: #0c0c0c;
-    color: white;
+    color: rgb(166, 191, 194);
     padding-top: 80px;
 }
 
@@ -39,7 +39,7 @@ nav{
 
 nav a{
     text-decoration: none;
-    color: white;
+    color: rgb(180, 196, 206);
     padding: 8px 15px;
     position: relative;
     transition: 0.3s;
@@ -93,10 +93,10 @@ nav a:hover::after{
 }
 
 .dish-card{
-    background: #1a1a1a;
+    background: #9c9c9c;
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.05);
+    border: 1px solid rgba(90, 83, 83, 0.05);
     transition: 0.3s;
 }
 
