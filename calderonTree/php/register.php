@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $tree->tree_famly           = $_POST['tree_famly'];
         $tree->tree_location        = $_POST['tree_location'];
         $tree->tree_height          = $_POST['tree_height'];
-        $tree->ttree_description    = $_POST['ttree_description'];
+        $tree->tree_description    = $_POST['tree_description'];
         $tree->tree_health          = $_POST['tree_health'];
         $tree->created_at           = date('Y-m-d H:i:s');
 
