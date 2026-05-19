@@ -1,0 +1,8 @@
+90 TEST CASES - BiconoirsGourmet
+================================
+
+PARTE 1: FRONTEND / SELENIUM (30 casos)
+PARTE 2: BACKEND / PHPUNIT (30 casos)
+PARTE 3: E2E / SELENIUM (30 casos)
+
+Generado: 2026-05-13

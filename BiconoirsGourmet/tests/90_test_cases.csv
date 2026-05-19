@@ -1,0 +1,91 @@
+TC_ID,Feature,Categoría,Prueba,Esperado,Resultado,Estado,Prioridad
+TC-01-01,Autenticación,Frontend,Cargar página de login,Formulario visible con campos usuario y contraseña,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-01-02,Autenticación,Frontend,Validar email requerido,Mensaje de error "Email es requerido",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-01-03,Autenticación,Frontend,Validar contraseña requerida,Mensaje de error "Contraseña es requerida",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-01-04,Autenticación,Frontend,Validar formato email incorrecto,Error "Email inválido",[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-01-05,Autenticación,Frontend,Enviar formulario válido,Redirecciona a dashboard si login es exitoso,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-02-01,Registro,Frontend,Cargar página de registro,Formulario de registro con todos los campos,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-02-02,Registro,Frontend,Validar campos requeridos,Errores en cada campo vacío,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-02-03,Registro,Frontend,Validar email duplicado,Error "Email ya registrado",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-02-04,Registro,Frontend,Validar contraseña corta,Error "Contraseña debe tener al menos 8 caracteres",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-02-05,Registro,Frontend,Registro exitoso,Usuario creado y redirecciona a login,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-03-01,Carrito,Frontend,Agregar plato al carrito,Plato aparece en carrito con cantidad 1,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-03-02,Carrito,Frontend,Aumentar cantidad,Total actualizado correctamente,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-03-03,Carrito,Frontend,Eliminar plato del carrito,Plato removido y carrito actualizado,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-03-04,Carrito,Frontend,Calcular total carrito,Total correcto = suma de precios × cantidad,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-03-05,Carrito,Frontend,Checkout con carrito vacío,Mensaje "Carrito vacío agregue platos",[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-04-01,Reservas,Frontend,Abrir formulario de reserva,Modal con campos: fecha hora cantidad personas,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-04-02,Reservas,Frontend,Validar fecha pasada,Error "Fecha debe ser futura",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-04-03,Reservas,Frontend,Validar cantidad de personas,Error si > 10 o < 1,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-04-04,Reservas,Frontend,Intentar reservar con slot lleno,Alerta "No hay mesas disponibles",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-04-05,Reservas,Frontend,Reserva exitosa,Confirmación y redirección a Mis Reservas,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-05-01,Encuesta,Frontend,Cargar formulario de encuesta,Preguntas y opciones de respuesta visibles,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-05-02,Encuesta,Frontend,Validar respuestas requeridas,Error "Debe responder todas las preguntas",[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-05-03,Encuesta,Frontend,Seleccionar opciones,Opciones seleccionadas marcan checkbox,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-05-04,Encuesta,Frontend,Agregar comentario,Texto se guarda correctamente,[Se llena al ejecutar],[Prueba Pasada / Fallida],Baja
+TC-05-05,Encuesta,Frontend,Enviar encuesta,Mensaje "Encuesta enviada exitosamente",[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-06-01,Administración,Frontend,Acceso sin permiso de admin,Redirecciona a login o página de error,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-06-02,Administración,Frontend,Cargar dashboard admin,Estadísticas y gráficos visibles,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-06-03,Administración,Frontend,Filtrar tabla de pedidos,Tabla filtra correctamente por estado,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-06-04,Administración,Frontend,Buscar en tabla,Resultados de búsqueda coinciden con término,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-06-05,Administración,Frontend,Exportar datos,Archivo descargado en formato correcto,[Se llena al ejecutar],[Prueba Pasada / Fallida],Baja
+TC-07-01,Autenticación,Backend,Autenticar con credenciales correctas,Retorna token/sesión válida,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-07-02,Autenticación,Backend,Autenticar con credenciales incorrectas,Retorna error "Credenciales inválidas",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-07-03,Autenticación,Backend,Validar token expirado,Error "Token expirado",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-07-04,Autenticación,Backend,Refresh token,Nuevo token generado correctamente,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-07-05,Autenticación,Backend,Logout,Sesión/token invalidada,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-08-01,Gestión de Usuarios,Backend,Crear usuario con datos válidos,Usuario guardado en BD y retorna ID,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-08-02,Gestión de Usuarios,Backend,Crear usuario con email duplicado,Error de validación única,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-08-03,Gestión de Usuarios,Backend,Actualizar perfil de usuario,Cambios guardados correctamente,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-08-04,Gestión de Usuarios,Backend,Eliminar usuario,Soft delete y usuario inactivo,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-08-05,Gestión de Usuarios,Backend,Listar usuarios con paginación,Retorna 10 usuarios por página,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-09-01,Gestión de Platos,Backend,Crear plato con ingredientes,Plato e ingredientes guardados,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-09-02,Gestión de Platos,Backend,Crear plato duplicado activo,Error "Plato ya existe",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-09-03,Gestión de Platos,Backend,Reutilizar plato inactivo,Plato reactivado correctamente,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-09-04,Gestión de Platos,Backend,Soft delete plato,Plato oculto y marca is_active = 0,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-09-05,Gestión de Platos,Backend,Bloquear eliminación por pedido activo,Error "Plato tiene pedidos activos",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-10-01,Gestión de Pedidos,Backend,Crear orden con items,Orden guardada y cálculo de total correcto,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-10-02,Gestión de Pedidos,Backend,Actualizar estado: Pendiente → Completado,Estado cambia y stock descontado,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-10-03,Gestión de Pedidos,Backend,Calcular total con descuento,Total = (suma items) - descuento,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-10-04,Gestión de Pedidos,Backend,Validar stock insuficiente,Error "Stock insuficiente para item X",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-10-05,Gestión de Pedidos,Backend,Cancelar orden activa,Stock devuelto y status = Cancelada,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-11-01,Gestión de Reservas,Backend,Crear reserva con capacidad disponible,Reserva guardada correctamente,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-11-02,Gestión de Reservas,Backend,Validar mesas llenas en horario,Error "Sin mesas disponibles",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-11-03,Gestión de Reservas,Backend,Límite 2 reservas activas por usuario,Error "Máximo 2 reservas activas",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-11-04,Gestión de Reservas,Backend,Cancelar reserva,Status = Cancelada y slot liberado,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-11-05,Gestión de Reservas,Backend,Listar reservas por rango de fechas,Retorna solo reservas en rango,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-12-01,Encuestas,Backend,Guardar encuesta con respuestas,Encuesta y respuestas en BD,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-12-02,Encuestas,Backend,Validar respuestas requeridas,Error si falta alguna pregunta,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-12-03,Encuestas,Backend,Calcular promedio calificación,Promedio = suma calificaciones / cantidad,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-12-04,Encuestas,Backend,Filtrar encuestas por rango fechas,Retorna solo encuestas en período,[Se llena al ejecutar],[Prueba Pasada / Fallida],Baja
+TC-12-05,Encuestas,Backend,Generar reporte encuestas,Reporte con estadísticas agregadas,[Se llena al ejecutar],[Prueba Pasada / Fallida],Baja
+TC-13-01,Flujo Cliente Completo,E2E,Registro → Login → Dashboard,Cliente ve dashboard personalizado,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-13-02,Flujo Cliente Completo,E2E,Ver menú → Agregar al carrito → Checkout,Carrito muestra platos seleccionados,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-13-03,Flujo Cliente Completo,E2E,Checkout → Generar pedido → Ver en Mis Pedidos,Pedido visible en historial,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-13-04,Flujo Cliente Completo,E2E,Hacer reserva → Ver en Mis Reservas,Reserva confirmada y visible,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-13-05,Flujo Cliente Completo,E2E,Completar encuesta → Verificar guardar,Encuesta guardada en BD,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-14-01,Flujo Administrador,E2E,Login admin → Ver dashboard,Estadísticas cargadas correctamente,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-14-02,Flujo Administrador,E2E,Crear nuevo plato → Ver en menú público,Plato aparece para clientes,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-14-03,Flujo Administrador,E2E,Administrar reservas → Aprobar/Cancelar,Cambio de estado reflejado,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-14-04,Flujo Administrador,E2E,Ver reportes financieros,Datos cargados correctamente,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-14-05,Flujo Administrador,E2E,Gestionar usuarios → Cambiar rol,Rol actualizado para usuario,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-15-01,Flujo Inventario,E2E,Cargar suministro → Stock actualizado,Cantidad de stock aumenta,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-15-02,Flujo Inventario,E2E,Crear orden → Descontar stock automático,Stock disminuye después de orden,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-15-03,Flujo Inventario,E2E,Completar orden → Stock procesado,Stock final correcto,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-15-04,Flujo Inventario,E2E,Historial de movimientos de stock,Todos los movimientos registrados,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-15-05,Flujo Inventario,E2E,Alerta de stock bajo,Notificación cuando stock < umbral,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-16-01,Flujo Reservas,E2E,Hacer reserva → Verificar en admin,Aparece en tabla de reservas,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-16-02,Flujo Reservas,E2E,Cancelar reserva → Slot se libera,Otro usuario puede reservar ese slot,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-16-03,Flujo Reservas,E2E,Validar capacidad máxima,No permite más reservas que capacidad,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-16-04,Flujo Reservas,E2E,Recordatorio de reserva (24h antes),Email/SMS enviado,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-16-05,Flujo Reservas,E2E,Check-in de reserva,Status cambia a "Completada",[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-17-01,Casos Negativos,E2E,Intentar 3+ reservas simultáneas,Error "Máximo 2 reservas",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-17-02,Casos Negativos,E2E,Pedido con stock insuficiente,Orden no se crea,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-17-03,Casos Negativos,E2E,Acceso sin autenticación a admin,Redirecciona a login,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-17-04,Casos Negativos,E2E,Modificar precio en carrito (XSS),Precio valida desde servidor,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-17-05,Casos Negativos,E2E,Intentar borrar usuario activo,Error "Usuario tiene pedidos activos",[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-18-01,Casos de Integración,E2E,Email de confirmación de pedido,Email enviado con detalles,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-18-02,Casos de Integración,E2E,Notificación de reserva confirmada,Email + SMS enviados,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media
+TC-18-03,Casos de Integración,E2E,Reporte diario de ventas,Reporte generado y enviado,[Se llena al ejecutar],[Prueba Pasada / Fallida],Baja
+TC-18-04,Casos de Integración,E2E,Sincronización de stock entre módulos,Stock consistente en BD,[Se llena al ejecutar],[Prueba Pasada / Fallida],Alta
+TC-18-05,Casos de Integración,E2E,Auditoría de cambios críticos,Todos los cambios registrados en log,[Se llena al ejecutar],[Prueba Pasada / Fallida],Media

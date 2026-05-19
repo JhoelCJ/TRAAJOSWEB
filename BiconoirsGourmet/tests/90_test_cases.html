@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>90 Test Cases - BiconoirsGourmet</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; background: #f4f4f4; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; padding: 20px; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .section { margin-bottom: 40px; page-break-after: always; }
+        .section-title { background: #2c3e50; color: white; padding: 15px; border-radius: 5px; font-size: 20px; font-weight: bold; margin-bottom: 20px; }
+        .feature { background: #ecf0f1; padding: 15px; margin-bottom: 15px; border-left: 4px solid #3498db; }
+        .test-case { background: white; border: 1px solid #ddd; padding: 15px; margin-bottom: 10px; border-radius: 3px; }
+        .test-code { font-weight: bold; color: #2980b9; font-size: 14px; }
+        .field { margin: 8px 0; }
+        .label { font-weight: bold; color: #2c3e50; width: 80px; display: inline-block; }
+        .value { color: #333; }
+        .result-pending { background: #fff3cd; padding: 5px; border-radius: 3px; color: #856404; }
+        .status { color: #666; }
+        .progress { margin-top: 20px; padding: 10px; background: #d4edda; border-radius: 3px; }
+        @media print {
+            body { margin: 0; }
+            .section { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 90 Test Cases - BiconoirsGourmet</h1>
+        <p><strong>Fecha de generación:</strong> 2026-05-13</p>
+        <p><strong>Total de casos:</strong> 90 test cases (30 Frontend + 30 Backend + 30 E2E)</p>
+        <hr>        <div class="section">
+            <div class="section-title">🌐 PARTE 1: FRONTEND / SELENIUM (UI Tests) - 30 Casos</div>
+            <p>Prueba lo que el usuario ve e interactúa en el navegador.</p><div class="feature"><strong>Feature 1 — Autenticación</strong>            <div class="test-case">
+                <div class="test-code">TC-01-01</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Cargar página de login</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Formulario visible con campos usuario y contraseña</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-01-02</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar email requerido</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Mensaje de error "Email es requerido"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-01-03</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar contraseña requerida</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Mensaje de error "Contraseña es requerida"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-01-04</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar formato email incorrecto</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Email inválido"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-01-05</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Enviar formulario válido</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Redirecciona a dashboard si login es exitoso</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 2 — Registro</strong>            <div class="test-case">
+                <div class="test-code">TC-02-06</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Cargar página de registro</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Formulario de registro con todos los campos</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-02-07</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar campos requeridos</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Errores en cada campo vacío</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-02-08</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar email duplicado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Email ya registrado"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-02-09</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar contraseña corta</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Contraseña debe tener al menos 8 caracteres"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-02-10</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Registro exitoso</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Usuario creado, redirecciona a login</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 3 — Carrito</strong>            <div class="test-case">
+                <div class="test-code">TC-03-11</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Agregar plato al carrito</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Plato aparece en carrito con cantidad 1</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-03-12</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Aumentar cantidad</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Total actualizado correctamente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-03-13</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Eliminar plato del carrito</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Plato removido, carrito actualizado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-03-14</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Calcular total carrito</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Total correcto = suma de precios × cantidad</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-03-15</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Checkout con carrito vacío</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Mensaje "Carrito vacío, agregue platos"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 4 — Reservas</strong>            <div class="test-case">
+                <div class="test-code">TC-04-16</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Abrir formulario de reserva</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Modal con campos: fecha, hora, cantidad personas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-04-17</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar fecha pasada</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Fecha debe ser futura"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-04-18</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar cantidad de personas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error si > 10 o < 1</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-04-19</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Intentar reservar con slot lleno</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Alerta "No hay mesas disponibles"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-04-20</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Reserva exitosa</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Confirmación y redirección a "Mis Reservas"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 5 — Encuesta</strong>            <div class="test-case">
+                <div class="test-code">TC-05-21</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Cargar formulario de encuesta</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Preguntas y opciones de respuesta visibles</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-05-22</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar respuestas requeridas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Debe responder todas las preguntas"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-05-23</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Seleccionar opciones</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Opciones seleccionadas marcan checkbox</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-05-24</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Agregar comentario</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Texto se guarda correctamente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-05-25</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Enviar encuesta</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Mensaje "Encuesta enviada exitosamente"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 6 — Administración</strong>            <div class="test-case">
+                <div class="test-code">TC-06-26</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Acceso sin permiso de admin</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Redirecciona a login o página de error</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-06-27</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Cargar dashboard admin</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Estadísticas y gráficos visibles</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-06-28</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Filtrar tabla de pedidos</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Tabla filtra correctamente por estado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-06-29</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Buscar en tabla</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Resultados de búsqueda coinciden con término</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-06-30</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Exportar datos</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Archivo descargado en formato correcto</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div></div>        <div class="section">
+            <div class="section-title">⚙️ PARTE 2: BACKEND / PHPUNIT (Unit + Integration Tests) - 30 Casos</div>
+            <p>Prueba la lógica de negocio en los Models y Controllers, sin navegador.</p><div class="feature"><strong>Feature 7 — Autenticación</strong>            <div class="test-case">
+                <div class="test-code">TC-07-01</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Autenticar con credenciales correctas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Retorna token/sesión válida</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-07-02</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Autenticar con credenciales incorrectas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Retorna error "Credenciales inválidas"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-07-03</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar token expirado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Token expirado"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-07-04</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Refresh token</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Nuevo token generado correctamente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-07-05</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Logout</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Sesión/token invalidada</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 8 — Gestión de Usuarios</strong>            <div class="test-case">
+                <div class="test-code">TC-08-06</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Crear usuario con datos válidos</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Usuario guardado en BD, retorna ID</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-08-07</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Crear usuario con email duplicado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error de validación única</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-08-08</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Actualizar perfil de usuario</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Cambios guardados correctamente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-08-09</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Eliminar usuario</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Soft delete, usuario inactivo</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-08-10</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Listar usuarios con paginación</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Retorna 10 usuarios por página</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 9 — Gestión de Platos</strong>            <div class="test-case">
+                <div class="test-code">TC-09-11</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Crear plato con ingredientes</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Plato y sus ingredientes guardados</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-09-12</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Crear plato duplicado activo</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Plato ya existe"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-09-13</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Reutilizar plato inactivo</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Plato reactivado correctamente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-09-14</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Soft delete plato</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Plato oculto, marca is_active = 0</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-09-15</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Bloquear eliminación por pedido activo</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Plato tiene pedidos activos"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 10 — Gestión de Pedidos</strong>            <div class="test-case">
+                <div class="test-code">TC-10-16</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Crear orden con items</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Orden guardada, cálculo de total correcto</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-10-17</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Actualizar estado: Pendiente → Completado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Estado cambia, stock descontado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-10-18</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Calcular total con descuento</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Total = (suma items) - descuento</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-10-19</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar stock insuficiente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Stock insuficiente para item X"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-10-20</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Cancelar orden activa</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Stock devuelto, status = Cancelada</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 11 — Gestión de Reservas</strong>            <div class="test-case">
+                <div class="test-code">TC-11-21</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Crear reserva con capacidad disponible</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Reserva guardada correctamente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-11-22</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar mesas llenas en horario</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Sin mesas disponibles"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-11-23</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Límite 2 reservas activas por usuario</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Máximo 2 reservas activas"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-11-24</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Cancelar reserva</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Status = Cancelada, slot liberado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-11-25</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Listar reservas por rango de fechas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Retorna solo reservas en rango</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 12 — Encuestas</strong>            <div class="test-case">
+                <div class="test-code">TC-12-26</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Guardar encuesta con respuestas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Encuesta y respuestas en BD</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-12-27</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar respuestas requeridas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error si falta alguna pregunta</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-12-28</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Calcular promedio calificación</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Promedio = suma calificaciones / cantidad</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-12-29</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Filtrar encuestas por rango fechas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Retorna solo encuestas en período</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-12-30</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Generar reporte encuestas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Reporte con estadísticas agregadas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div></div>        <div class="section">
+            <div class="section-title">🔗 PARTE 3: END-TO-END / SELENIUM (E2E Tests) - 30 Casos</div>
+            <p>Prueba flujos completos de negocio de inicio a fin, combinando varias pantallas.</p><div class="feature"><strong>Feature 13 — Flujo Cliente Completo</strong>            <div class="test-case">
+                <div class="test-code">TC-13-01</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Registro → Login → Dashboard</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Cliente ve dashboard personalizado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-13-02</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Ver menú → Agregar platos al carrito</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Carrito muestra platos seleccionados</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-13-03</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Checkout → Generar pedido → Ver en Mis Pedidos</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Pedido visible en historial</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-13-04</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Hacer reserva → Ver en Mis Reservas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Reserva confirmada y visible</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-13-05</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Completar encuesta → Verificar guardar</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Encuesta guardada en BD</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 14 — Flujo Administrador</strong>            <div class="test-case">
+                <div class="test-code">TC-14-06</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Login admin → Ver dashboard</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Estadísticas cargadas correctamente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-14-07</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Crear nuevo plato → Ver en menú público</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Plato aparece para clientes</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-14-08</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Administrar reservas → Aprobar/Cancelar</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Cambio de estado reflejado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-14-09</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Ver reportes financieros</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Datos cargados correctamente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-14-10</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Gestionar usuarios → Cambiar rol</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Rol actualizado para usuario</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 15 — Flujo Inventario</strong>            <div class="test-case">
+                <div class="test-code">TC-15-11</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Cargar suministro → Stock actualizado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Cantidad de stock aumenta</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-15-12</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Crear orden → Descontar stock automático</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Stock disminuye después de orden</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-15-13</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Completar orden → Stock procesado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Stock final correcto</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-15-14</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Historial de movimientos de stock</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Todos los movimientos registrados</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-15-15</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Alerta de stock bajo</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Notificación cuando stock < umbral</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 16 — Flujo Reservas</strong>            <div class="test-case">
+                <div class="test-code">TC-16-16</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Hacer reserva → Verificar en admin</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Aparece en tabla de reservas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-16-17</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Cancelar reserva → Slot se libera</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Otro usuario puede reservar ese slot</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-16-18</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Validar capacidad máxima</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">No permite más reservas que capacidad</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-16-19</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Recordatorio de reserva (24h antes)</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Email/SMS enviado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-16-20</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Check-in de reserva</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Status cambia a "Completada"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 17 — Casos Negativos</strong>            <div class="test-case">
+                <div class="test-code">TC-17-21</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Intentar 3+ reservas simultáneas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Máximo 2 reservas"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-17-22</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Pedido con stock insuficiente</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Orden no se crea</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-17-23</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Acceso sin autenticación a admin</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Redirecciona a login</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-17-24</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Modificar precio en carrito (XSS)</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Precio valida desde servidor</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-17-25</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Intentar borrar usuario activo</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Error "Usuario tiene pedidos activos"</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div><div class="feature"><strong>Feature 18 — Casos de Integración</strong>            <div class="test-case">
+                <div class="test-code">TC-18-26</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Email de confirmación de pedido</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Email enviado con detalles</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-18-27</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Notificación de reserva confirmada</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Email + SMS enviados</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-18-28</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Reporte diario de ventas</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Reporte generado y enviado</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-18-29</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Sincronización de stock entre módulos</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Stock consistente en BD</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div>            <div class="test-case">
+                <div class="test-code">TC-18-30</div>
+                <div class="field">
+                    <span class="label">Prueba:</span>
+                    <span class="value">Auditoría de cambios críticos</span>
+                </div>
+                <div class="field">
+                    <span class="label">Esperado:</span>
+                    <span class="value">Todos los cambios registrados en log</span>
+                </div>
+                <div class="field">
+                    <span class="label">Resultado:</span>
+                    <span class="result-pending">[Se llena al ejecutar]</span>
+                </div>
+                <div class="field">
+                    <span class="label">Estado:</span>
+                    <span class="status">[ ] Prueba Pasada / [ ] Prueba Fallida</span>
+                </div>
+            </div></div></div>        <div class="progress">
+            <strong>📊 Resumen de Ejecución:</strong><br>
+            Total Ejecutados: <input type="text" style="width: 50px;"> / 90<br>
+            Pasados: <input type="text" style="width: 50px;"> ✓<br>
+            Fallidos: <input type="text" style="width: 50px;"> ✗<br>
+            Tasa de Éxito: <input type="text" style="width: 50px;"> %
+        </div>
+    </div>
+</body>
+</html>

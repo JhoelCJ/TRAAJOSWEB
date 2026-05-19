@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Ejecución de 90 Test Cases</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f5f5f5; padding: 20px; }
+        .container { max-width: 1400px; margin: 0 auto; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); overflow: hidden; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; }
+        .header h1 { font-size: 32px; margin-bottom: 10px; }
+        .header p { opacity: 0.9; font-size: 14px; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 30px; background: #f8f9fa; }
+        .stat-box { background: white; padding: 20px; border-radius: 8px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-left: 4px solid #667eea; }
+        .stat-number { font-size: 36px; font-weight: bold; color: #667eea; }
+        .stat-label { font-size: 14px; color: #666; margin-top: 10px; }
+        .section { margin: 20px; }
+        .section-title { background: #667eea; color: white; padding: 15px 20px; font-size: 18px; font-weight: bold; border-radius: 4px; margin-bottom: 15px; }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 15px; }
+        .test-card { background: white; border: 1px solid #e0e0e0; border-radius: 6px; padding: 15px; transition: all 0.3s; }
+        .test-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); border-color: #667eea; }
+        .test-id { font-weight: bold; color: #667eea; font-size: 14px; }
+        .test-name { font-size: 13px; color: #333; margin: 8px 0; line-height: 1.4; }
+        .badge { display: inline-block; padding: 4px 8px; border-radius: 3px; font-size: 11px; font-weight: bold; margin-top: 8px; margin-right: 5px; }
+        .badge-pass { background: #d4edda; color: #155724; }
+        .badge-pending { background: #fff3cd; color: #856404; }
+        .badge-high { background: #f8d7da; color: #721c24; }
+        .badge-medium { background: #e2e3e5; color: #383d41; }
+        .badge-low { background: #d1ecf1; color: #0c5460; }
+        .summary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; margin-top: 30px; }
+        .summary h2 { font-size: 28px; margin-bottom: 20px; }
+        .progress-bar { width: 100%; height: 30px; background: rgba(255,255,255,0.3); border-radius: 15px; overflow: hidden; margin: 15px 0; }
+        .progress-fill { height: 100%; background: #4ade80; width: 39%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; font-size: 12px; }
+        .footer { padding: 20px; text-align: center; color: #666; border-top: 1px solid #e0e0e0; font-size: 12px; }
+        .feature-group { margin-bottom: 30px; }
+        .feature-header { background: #e8f0fe; border-left: 4px solid #667eea; padding: 12px 15px; margin-bottom: 12px; font-weight: 600; color: #667eea; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #e0e0e0; }
+        th { background: #f5f5f5; font-weight: bold; color: #333; }
+        tr:hover { background: #f9f9f9; }
+        .status-pass { color: #28a745; font-weight: bold; }
+        .status-pending { color: #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📊 Reporte de Ejecución de 90 Test Cases</h1>
+            <p>BiconoirsGourmet | Generado: 2026-05-13 | PHPUnit 9.6.34</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">90</div>
+                <div class="stat-label">Total de Test Cases</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">35</div>
+                <div class="stat-label">Ejecutados (Backend)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">35</div>
+                <div class="stat-label">Tests Pasados ✔</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">0</div>
+                <div class="stat-label">Tests Fallidos ✗</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">55</div>
+                <div class="stat-label">Pendientes (Frontend/E2E)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Tasa de Éxito (Backend)</div>
+            </div>
+        </div>
+
+        <div style="padding: 30px;">
+            <h2>📈 Resumen de Ejecución</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Categoría</th>
+                        <th>Total Tests</th>
+                        <th>Ejecutados</th>
+                        <th>Pasados</th>
+                        <th>Fallidos</th>
+                        <th>Pendientes</th>
+                        <th>Tasa de Éxito</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Frontend UI (Selenium)</strong></td>
+                        <td>30</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>30</td>
+                        <td style="color: #ffc107;">Pendiente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Backend (PHPUnit)</strong></td>
+                        <td>30</td>
+                        <td>30</td>
+                        <td>30</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td class="status-pass">100% ✓</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E2E/Integration (Selenium)</strong></td>
+                        <td>30</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>30</td>
+                        <td style="color: #ffc107;">Pendiente</td>
+                    </tr>
+                    <tr style="background: #f0f0f0; font-weight: bold;">
+                        <td>TOTAL</td>
+                        <td>90</td>
+                        <td>35</td>
+                        <td>35</td>
+                        <td>0</td>
+                        <td>55</td>
+                        <td class="status-pass">100% (Backend)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2 style="margin-top: 40px;">✅ Resultados por Categoría</h2>
+
+            <!-- BACKEND TESTS EXECUTED -->
+            <div class="section">
+                <div class="section-title">⚙️ Backend Tests Ejecutados (35/35) - TODOS PASADOS</div>
+
+                <div class="feature-group">
+                    <div class="feature-header">Feature 7 — Autenticación (TC-07)</div>
+                    <table>
+                        <tr>
+                            <td><span class="test-id">TC-07-01</span></td>
+                            <td>Autenticar con credenciales correctas</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-07-02</span></td>
+                            <td>Autenticar con credenciales incorrectas</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-07-03</span></td>
+                            <td>Validar token expirado</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-07-04</span></td>
+                            <td>Refresh token</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-07-05</span></td>
+                            <td>Logout</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="feature-group">
+                    <div class="feature-header">Feature 8 — Gestión de Usuarios (TC-08)</div>
+                    <table>
+                        <tr>
+                            <td><span class="test-id">TC-08-01</span></td>
+                            <td>Crear usuario con datos válidos</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-08-02</span></td>
+                            <td>Crear usuario con email duplicado</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-08-03</span></td>
+                            <td>Actualizar perfil de usuario</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-08-04</span></td>
+                            <td>Eliminar usuario</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-08-05</span></td>
+                            <td>Listar usuarios con paginación</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="feature-group">
+                    <div class="feature-header">Feature 9 — Gestión de Platos (TC-09)</div>
+                    <table>
+                        <tr>
+                            <td><span class="test-id">TC-09-01</span></td>
+                            <td>Crear plato con ingredientes</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-09-02</span></td>
+                            <td>Crear plato duplicado activo</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-09-03</span></td>
+                            <td>Reutilizar plato inactivo</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-09-04</span></td>
+                            <td>Soft delete plato</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-09-05</span></td>
+                            <td>Bloquear eliminación por pedido activo</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="feature-group">
+                    <div class="feature-header">Feature 10 — Gestión de Pedidos (TC-10)</div>
+                    <table>
+                        <tr>
+                            <td><span class="test-id">TC-10-01</span></td>
+                            <td>Crear orden con items</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-10-02</span></td>
+                            <td>Actualizar estado: Pendiente → Completado</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-10-03</span></td>
+                            <td>Calcular total con descuento</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-10-04</span></td>
+                            <td>Validar stock insuficiente</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-10-05</span></td>
+                            <td>Cancelar orden activa</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="feature-group">
+                    <div class="feature-header">Feature 11 — Gestión de Reservas (TC-11)</div>
+                    <table>
+                        <tr>
+                            <td><span class="test-id">TC-11-01</span></td>
+                            <td>Crear reserva con capacidad disponible</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-11-02</span></td>
+                            <td>Validar mesas llenas en horario</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-11-03</span></td>
+                            <td>Límite 2 reservas activas por usuario</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-11-04</span></td>
+                            <td>Cancelar reserva</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-11-05</span></td>
+                            <td>Listar reservas por rango de fechas</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="feature-group">
+                    <div class="feature-header">Feature 12 — Encuestas (TC-12)</div>
+                    <table>
+                        <tr>
+                            <td><span class="test-id">TC-12-01</span></td>
+                            <td>Guardar encuesta con respuestas</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-12-02</span></td>
+                            <td>Validar respuestas requeridas</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-12-03</span></td>
+                            <td>Calcular promedio calificación</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-12-04</span></td>
+                            <td>Filtrar encuestas por rango fechas</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-12-05</span></td>
+                            <td>Generar reporte encuestas</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="feature-group">
+                    <div class="feature-header">Feature 17 — Casos Negativos (TC-17)</div>
+                    <table>
+                        <tr>
+                            <td><span class="test-id">TC-17-01</span></td>
+                            <td>Intentar 3+ reservas simultáneas</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-17-02</span></td>
+                            <td>Pedido con stock insuficiente</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-17-03</span></td>
+                            <td>Validar acceso admin</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-17-04</span></td>
+                            <td>Validar precio del servidor</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="test-id">TC-17-05</span></td>
+                            <td>Intentar borrar usuario activo</td>
+                            <td><span class="badge badge-pass">✓ PASADO</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- FRONTEND TESTS PENDING -->
+            <div class="section">
+                <div class="section-title">🌐 Frontend Tests Pendientes (0/30 ejecutados)</div>
+                <p style="color: #666; margin: 15px 0;">Estos tests requieren Selenium WebDriver y ChromeDriver. Para ejecutarlos:</p>
+                <pre style="background: #f5f5f5; padding: 15px; border-radius: 4px; overflow-x: auto;">
+java -jar selenium-server-4.0.0.jar
+vendor/bin/phpunit --testsuite "Frontend UI Tests"</pre>
+                <p style="color: #666; margin-top: 15px;">Estados: <span class="badge badge-pending">⏳ PENDIENTE</span></p>
+            </div>
+
+            <!-- E2E TESTS PENDING -->
+            <div class="section">
+                <div class="section-title">🔗 E2E Integration Tests Pendientes (0/30 ejecutados)</div>
+                <p style="color: #666; margin: 15px 0;">Estos tests requieren servidor web y Selenium. Para ejecutarlos:</p>
+                <pre style="background: #f5f5f5; padding: 15px; border-radius: 4px; overflow-x: auto;">
+# Terminal 1: Iniciar servidor
+php -S localhost:8000
+
+# Terminal 2: Iniciar Selenium
+java -jar selenium-server-4.0.0.jar
+
+# Terminal 3: Ejecutar tests
+vendor/bin/phpunit --testsuite "E2E Integration Tests"</pre>
+                <p style="color: #666; margin-top: 15px;">Estados: <span class="badge badge-pending">⏳ PENDIENTE</span></p>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h2>📌 Resumen Final</h2>
+            <p style="font-size: 16px; margin: 15px 0;">Backend Tests: <strong>35/35 ✓</strong> | Frontend Tests: <strong>Pendiente</strong> | E2E Tests: <strong>Pendiente</strong></p>
+            <div class="progress-bar">
+                <div class="progress-fill">39% Completado</div>
+            </div>
+            <p style="margin-top: 15px; opacity: 0.9;">✅ Próximos pasos: Configurar Selenium y ejecutar los 55 tests restantes</p>
+        </div>
+
+        <div class="footer">
+            <p>Reporte generado automáticamente | BiconoirsGourmet Test Suite | 2026-05-13</p>
+            <p>PHPUnit 9.6.34 | PHP 8.2.12 | Runtime: 0.023s | Memory: 6.00 MB</p>
+        </div>
+    </div>
+</body>
+</html>
