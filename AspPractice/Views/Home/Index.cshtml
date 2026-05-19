@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container mt-5 text-center">
+    <h1>Bienvenido a Gestión de Empleados</h1>
+    <p class="lead mt-3">Aplicación ASP.NET MVC + Vue + Supabase</p>
+ECHO is off.
+    <div class="mt-5">
+        <a asp-action="Index" asp-controller="Employee" class="btn btn-primary btn-lg">
+            Ver Empleados
+        </a>
+        <a asp-action="Create" asp-controller="Employee" class="btn btn-success btn-lg ms-2">
+            Crear Empleado
+        </a>
+    </div>
+</div>
