@@ -61,11 +61,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\UNIVERSIDAD\\8vo Semestre (Quinto)\\WebAv\\U2\\AspPractice\\EmployeeManagement.csproj",
+      "projectUniqueName": "C:\\xampp\\htdocs\\WEBAVTRABGIT\\TRAAJOSWEB\\AspPractice\\EmployeeManagement.csproj",
       "projectName": "EmployeeManagement",
-      "projectPath": "D:\\UNIVERSIDAD\\8vo Semestre (Quinto)\\WebAv\\U2\\AspPractice\\EmployeeManagement.csproj",
+      "projectPath": "C:\\xampp\\htdocs\\WEBAVTRABGIT\\TRAAJOSWEB\\AspPractice\\EmployeeManagement.csproj",
       "packagesPath": "C:\\Users\\jhoel\\.nuget\\packages\\",
-      "outputPath": "D:\\UNIVERSIDAD\\8vo Semestre (Quinto)\\WebAv\\U2\\AspPractice\\obj\\",
+      "outputPath": "C:\\xampp\\htdocs\\WEBAVTRABGIT\\TRAAJOSWEB\\AspPractice\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

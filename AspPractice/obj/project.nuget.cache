@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0qkChhG7LeU=",
+  "dgSpecHash": "ZpmXbPkOQu4=",
   "success": true,
-  "projectFilePath": "D:\\UNIVERSIDAD\\8vo Semestre (Quinto)\\WebAv\\U2\\AspPractice\\EmployeeManagement.csproj",
+  "projectFilePath": "C:\\xampp\\htdocs\\WEBAVTRABGIT\\TRAAJOSWEB\\AspPractice\\EmployeeManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jhoel\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
   ],
