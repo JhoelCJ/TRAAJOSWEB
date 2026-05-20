@@ -17,8 +17,8 @@ namespace EmployeeManagement.Services
 
         public SupabaseService(IConfiguration configuration)
         {
-            var url = configuration["https://teqgmzwpcwcelrpecdyq.supabase.co"];
-            var key = configuration["eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlcWdtendwY3djZWxycGVjZHlxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzg0NTExOTQsImV4cCI6MjA5NDAyNzE5NH0.ROxh_zCVrtIF8U67hmT1DkgA4-4OWwpL2R0kQWIPIGw"];
+            var url = configuration["Supabase:Url"];
+            var key = configuration["Supabase:Key"];
 
             if (string.IsNullOrEmpty(url) || string.IsNullOrEmpty(key))
             {
