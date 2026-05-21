@@ -1,10 +1,10 @@
 # PHP + Vue + Supabase + RedBean MVC
 
-Ejemplo de aplicacion web sin API REST: PHP sirve las paginas MVC, los formularios envian `POST` normal al controlador, RedBean guarda/lee datos desde Supabase Postgres y Vue se usa en las vistas para la experiencia de usuario.
+Example web application without a REST API: PHP serves the MVC pages, forms submit regular `POST` requests to the controller, RedBean reads and writes data in Supabase Postgres, and Vue is used in the views for the user interface.
 
-## 1. Crear la tabla en Supabase
+## 1. Create the Supabase table
 
-Abre Supabase SQL Editor y ejecuta:
+Open the Supabase SQL Editor and run:
 
 ```sql
 create table if not exists employee (
@@ -19,17 +19,17 @@ create table if not exists employee (
 );
 ```
 
-## 2. Configurar credenciales
+## 2. Configure credentials
 
 ```powershell
 Copy-Item .env.example .env
 ```
 
-Luego edita `.env` con los datos de Supabase.
+Then edit `.env` with your Supabase database details.
 
-## 3. Agregar RedBean sin Composer
+## 3. Add RedBean without Composer
 
-Copia tu archivo `rb.php` en una de estas rutas:
+Copy your `rb.php` file into one of these paths:
 
 ```text
 vendor/rb.php
@@ -38,58 +38,58 @@ lib/rb.php
 rb.php
 ```
 
-La ruta recomendada para este proyecto es:
+The recommended path for this project is:
 
 ```text
 lib/rb.php
 ```
 
-Si quieres usar otra ubicacion, configura `REDBEAN_FILE` en `.env` con la ruta absoluta del archivo.
+If you want to use another location, set `REDBEAN_FILE` in `.env` with the absolute path to the file.
 
-Si PHP no tiene PostgreSQL activo, habilita `pdo_pgsql` y `pgsql` en `php.ini`.
+If PHP does not have PostgreSQL enabled, enable `pdo_pgsql` and `pgsql` in `php.ini`.
 
-## 4. Ejecutar
+## 4. Run locally
 
 ```powershell
 php -S localhost:8000 -t public
 ```
 
-Abre:
+Open:
 
-- `http://localhost:8000/employees/create` para registrar empleados.
-- `http://localhost:8000/employees` para ver la tabla y el total de salarios.
+- `http://localhost:8000/employees/create` to register employees.
+- `http://localhost:8000/employees` to view the table and total salaries.
 
-## Estructura MVC
+## MVC structure
 
-- `public/index.php`: front controller y rutas.
-- `app/Controllers/EmployeeController.php`: recibe peticiones y decide la respuesta.
-- `app/Models/Employee.php`: acceso a datos usando RedBean.
-- `app/Views`: HTML/PHP con Vue montado en cada pagina.
-- `app/Core`: configuracion, base de datos y helpers de vista.
+- `public/index.php`: front controller and routes.
+- `app/Controllers/EmployeeController.php`: receives requests and selects the response.
+- `app/Models/Employee.php`: data access using RedBean.
+- `app/Views`: HTML/PHP with Vue mounted in each page.
+- `app/Core`: configuration, database, and view helpers.
 
-## Desplegar en Render con Docker
+## Deploy to Render with Docker
 
-1. Copia `rb.php` en `lib/rb.php` y subelo al repositorio.
-2. En Render crea un Web Service usando Docker.
-3. Configura estas variables de entorno:
+1. Copy `rb.php` to `lib/rb.php` and commit it to the repository.
+2. Create a Docker Web Service in Render.
+3. Configure these environment variables:
 
 ```text
 APP_ENV=production
 APP_DEBUG=false
-SUPABASE_DATABASE_URL=postgresql://postgres.TU_PROJECT_REF:tu_password_de_base_de_datos@aws-0-TU_REGION.pooler.supabase.com:5432/postgres?sslmode=require
+SUPABASE_DATABASE_URL=postgresql://postgres.YOUR_PROJECT_REF:your_database_password@aws-0-YOUR_REGION.pooler.supabase.com:5432/postgres?sslmode=require
 ```
 
-Tambien puedes usar variables separadas:
+You can also use separate variables:
 
 ```text
 APP_ENV=production
 APP_DEBUG=false
-SUPABASE_DB_HOST=aws-0-TU_REGION.pooler.supabase.com
+SUPABASE_DB_HOST=aws-0-YOUR_REGION.pooler.supabase.com
 SUPABASE_DB_PORT=5432
 SUPABASE_DB_NAME=postgres
-SUPABASE_DB_USER=postgres.TU_PROJECT_REF
-SUPABASE_DB_PASSWORD=tu_password_de_base_de_datos
+SUPABASE_DB_USER=postgres.YOUR_PROJECT_REF
+SUPABASE_DB_PASSWORD=your_database_password
 SUPABASE_DB_SSLMODE=require
 ```
 
-Usa el connection string de Supabase en modo Session Pooler si Render no puede conectar por IPv6 con la conexion directa.
+Use Supabase's Session Pooler connection string if Render cannot connect through the direct IPv6 connection.

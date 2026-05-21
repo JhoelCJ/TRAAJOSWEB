@@ -67,16 +67,16 @@ final class EmployeeController
 
         foreach (['employee_id', 'name', 'address', 'cellphone', 'email', 'salary'] as $field) {
             if ($data[$field] === '') {
-                $errors[$field] = 'This field is required.';
+                $errors[$field] = 'required.';
             }
         }
 
         if ($data['email'] !== '' && filter_var($data['email'], FILTER_VALIDATE_EMAIL) === false) {
-            $errors['email'] = 'Enter a valid email address.';
+            $errors['email'] = 'email valid.';
         }
 
         if ($data['salary'] !== '' && (!is_numeric($data['salary']) || (float) $data['salary'] < 0)) {
-            $errors['salary'] = 'Salary must be a positive number.';
+            $errors['salary'] = 'Need positive number.';
         }
 
         if ($errors === []) {

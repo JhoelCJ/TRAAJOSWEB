@@ -1,16 +1,16 @@
 <?php
-$title = 'Register employee';
+$title = 'Registrar empleado';
 require dirname(__DIR__) . '/layout/header.php';
 ?>
 
 <section id="employee-form" class="panel">
     <div class="section-heading">
-        <p class="eyebrow">Registration</p>
-        <h1>New employee</h1>
+        <p class="eyebrow">Registro</p>
+        <h1>Nuevo empleado</h1>
     </div>
 
     <?php if ($errors !== []): ?>
-        <div class="alert">Please review the highlighted fields before saving.</div>
+        <div class="alert">Revisa los campos marcados antes de guardar.</div>
     <?php endif; ?>
 
     <form method="post" action="/employees" class="form" @submit="submitting = true">
@@ -51,9 +51,9 @@ require dirname(__DIR__) . '/layout/header.php';
         </label>
 
         <div class="actions">
-            <a class="button secondary" href="/employees">Cancel</a>
+            <a class="button secondary" href="/employees">Cancelar</a>
             <button class="button" type="submit" :disabled="submitting">
-                {{ submitting ? 'Saving...' : 'Save employee' }}
+                {{ submitting ? 'Guardando...' : 'Guardar empleado' }}
             </button>
         </div>
     </form>

@@ -1,19 +1,19 @@
 <?php
-$title = 'Employee list';
+$title = 'Lista de empleados';
 require dirname(__DIR__) . '/layout/header.php';
 ?>
 
 <section id="employees-table" class="panel">
     <div class="section-heading split">
         <div>
-            <p class="eyebrow">Database</p>
-            <h1>Employees</h1>
+            <p class="eyebrow">Base de datos</p>
+            <h1>Empleados</h1>
         </div>
-        <a class="button" href="/employees/create">New employee</a>
+        <a class="button" href="/employees/create">Nuevo empleado</a>
     </div>
 
     <?php if (isset($_GET['created'])): ?>
-        <div class="success">Employee saved successfully.</div>
+        <div class="success">Empleado guardado correctamente.</div>
     <?php endif; ?>
 
     <div class="table-wrap">
@@ -30,7 +30,7 @@ require dirname(__DIR__) . '/layout/header.php';
             </thead>
             <tbody>
             <tr v-if="employees.length === 0">
-                <td colspan="6" class="empty">No employees have been registered yet.</td>
+                <td colspan="6" class="empty">Todavia no hay empleados registrados.</td>
             </tr>
             <tr v-for="employee in employees" :key="employee.id">
                 <td>{{ employee.employee_id }}</td>
@@ -43,7 +43,7 @@ require dirname(__DIR__) . '/layout/header.php';
             </tbody>
             <tfoot>
             <tr>
-                <th colspan="5">Total salaries</th>
+                <th colspan="5">Total salarios</th>
                 <th class="money">{{ money(totalSalary) }}</th>
             </tr>
             </tfoot>
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         methods: {
             money(value) {
-                return new Intl.NumberFormat('en-US', {
+                return new Intl.NumberFormat('es-EC', {
                     style: 'currency',
                     currency: 'USD'
                 }).format(Number(value || 0));

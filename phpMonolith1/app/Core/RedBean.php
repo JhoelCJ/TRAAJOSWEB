@@ -35,7 +35,7 @@ final class RedBean
         }
 
         throw new \RuntimeException(
-            'rb.php was not found. Copy it to lib/rb.php or set REDBEAN_FILE in .env.'
+            'No se encontro rb.php. Copialo en vendor/rb.php o configura REDBEAN_FILE en .env.'
         );
     }
 
@@ -50,6 +50,6 @@ final class RedBean
             return;
         }
 
-        throw new \RuntimeException('The rb.php file did not load the RedBeanPHP R class.');
+        throw new \RuntimeException('El archivo rb.php no cargo la clase R de RedBeanPHP.');
     }
 }

@@ -16,7 +16,7 @@ final class View
         $viewFile = dirname(__DIR__) . '/Views/' . $view . '.php';
 
         if (!is_file($viewFile)) {
-            throw new \RuntimeException("View {$view} does not exist.");
+            throw new \RuntimeException("La vista {$view} no existe.");
         }
 
         require $viewFile;

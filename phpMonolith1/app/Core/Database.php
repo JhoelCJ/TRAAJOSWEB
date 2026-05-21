@@ -85,7 +85,7 @@ final class Database
         $parts = parse_url($databaseUrl);
 
         if ($parts === false || !isset($parts['host'], $parts['user'], $parts['pass'])) {
-            throw new \RuntimeException('SUPABASE_DATABASE_URL is not a valid database URL.');
+            throw new \RuntimeException('SUPABASE_DATABASE_URL no tiene un formato valido.');
         }
 
         $query = [];
@@ -109,7 +109,7 @@ final class Database
             ]);
             $pdo = null;
         } catch (\PDOException $error) {
-            throw new \RuntimeException('Could not connect to Supabase: ' . $error->getMessage(), 0, $error);
+            throw new \RuntimeException('No se pudo conectar a Supabase: ' . $error->getMessage(), 0, $error);
         }
     }
 
@@ -118,7 +118,7 @@ final class Database
         $value = self::optionalEnv($key) ?? $default;
 
         if ($value === null || $value === '') {
-            throw new \RuntimeException("Missing {$key} in the .env file.");
+            throw new \RuntimeException("Falta configurar {$key} en el archivo .env.");
         }
 
         return $value;

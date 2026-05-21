@@ -46,7 +46,7 @@ try {
     }
 
     http_response_code(404);
-    echo 'Page not found.';
+    echo 'Pagina no encontrada.';
 } catch (Throwable $error) {
     http_response_code(500);
     error_log(sprintf(
@@ -57,5 +57,5 @@ try {
     ));
 
     $debug = ($_ENV['APP_DEBUG'] ?? 'false') === 'true';
-    echo $debug ? nl2br(htmlspecialchars($error->getMessage(), ENT_QUOTES, 'UTF-8')) : 'Internal server error.';
+    echo $debug ? nl2br(htmlspecialchars($error->getMessage(), ENT_QUOTES, 'UTF-8')) : 'Error interno.';
 }
