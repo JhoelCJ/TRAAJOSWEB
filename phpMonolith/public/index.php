@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use App\Controllers\EmployeeController;
 use App\Core\Database;
-use App\Core\RedBean;
 
 require_once dirname(__DIR__) . '/app/bootstrap.php';
 
@@ -16,16 +15,20 @@ if ($method === 'GET' && $path === '/health') {
     exit;
 }
 
+if ($method === 'GET' && $path === '/favicon.ico') {
+    http_response_code(204);
+    exit;
+}
+
+if ($method === 'GET' && $path === '/') {
+    header('Location: /employees');
+    exit;
+}
+
 try {
     Database::loadEnv(APP_ROOT . '/.env');
-    RedBean::load(APP_ROOT);
 
     $controller = new EmployeeController();
-
-    if ($method === 'GET' && $path === '/') {
-        header('Location: /employees');
-        exit;
-    }
 
     if ($method === 'GET' && $path === '/employees') {
         $controller->index();
@@ -46,6 +49,12 @@ try {
     echo 'Pagina no encontrada.';
 } catch (Throwable $error) {
     http_response_code(500);
+    error_log(sprintf(
+        '[app-error] %s in %s:%d',
+        $error->getMessage(),
+        $error->getFile(),
+        $error->getLine()
+    ));
 
     $debug = ($_ENV['APP_DEBUG'] ?? 'false') === 'true';
     echo $debug ? nl2br(htmlspecialchars($error->getMessage(), ENT_QUOTES, 'UTF-8')) : 'Error interno.';

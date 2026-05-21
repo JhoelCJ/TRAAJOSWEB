@@ -36,6 +36,8 @@ final class Database
             return;
         }
 
+        RedBean::load(APP_ROOT);
+
         $host = self::env('SUPABASE_DB_HOST');
         $port = self::env('SUPABASE_DB_PORT', '5432');
         $database = self::env('SUPABASE_DB_NAME', 'postgres');
