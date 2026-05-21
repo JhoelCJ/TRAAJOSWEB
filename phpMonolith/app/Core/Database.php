@@ -38,33 +38,98 @@ final class Database
 
         RedBean::load(APP_ROOT);
 
-        $host = self::env('SUPABASE_DB_HOST');
-        $port = self::env('SUPABASE_DB_PORT', '5432');
-        $database = self::env('SUPABASE_DB_NAME', 'postgres');
-        $user = self::env('SUPABASE_DB_USER');
-        $password = self::env('SUPABASE_DB_PASSWORD');
-        $sslmode = self::env('SUPABASE_DB_SSLMODE', 'require');
+        $connection = self::connectionConfig();
 
         $dsn = sprintf(
             'pgsql:host=%s;port=%s;dbname=%s;sslmode=%s',
-            $host,
-            $port,
-            $database,
-            $sslmode
+            $connection['host'],
+            $connection['port'],
+            $connection['database'],
+            $connection['sslmode']
         );
 
-        R::setup($dsn, $user, $password);
+        self::testConnection($dsn, $connection['user'], $connection['password']);
+
+        R::setup($dsn, $connection['user'], $connection['password']);
         R::freeze(true);
 
         self::$connected = true;
     }
 
+    /**
+     * @return array{host: string, port: string, database: string, user: string, password: string, sslmode: string}
+     */
+    private static function connectionConfig(): array
+    {
+        $databaseUrl = self::optionalEnv('SUPABASE_DATABASE_URL') ?? self::optionalEnv('DATABASE_URL');
+
+        if ($databaseUrl !== null) {
+            return self::parseDatabaseUrl($databaseUrl);
+        }
+
+        return [
+            'host' => self::env('SUPABASE_DB_HOST'),
+            'port' => self::env('SUPABASE_DB_PORT', '5432'),
+            'database' => self::env('SUPABASE_DB_NAME', 'postgres'),
+            'user' => self::env('SUPABASE_DB_USER'),
+            'password' => self::env('SUPABASE_DB_PASSWORD'),
+            'sslmode' => self::env('SUPABASE_DB_SSLMODE', 'require'),
+        ];
+    }
+
+    /**
+     * @return array{host: string, port: string, database: string, user: string, password: string, sslmode: string}
+     */
+    private static function parseDatabaseUrl(string $databaseUrl): array
+    {
+        $parts = parse_url($databaseUrl);
+
+        if ($parts === false || !isset($parts['host'], $parts['user'], $parts['pass'])) {
+            throw new \RuntimeException('SUPABASE_DATABASE_URL no tiene un formato valido.');
+        }
+
+        $query = [];
+        parse_str($parts['query'] ?? '', $query);
+
+        return [
+            'host' => $parts['host'],
+            'port' => (string) ($parts['port'] ?? 5432),
+            'database' => ltrim($parts['path'] ?? '/postgres', '/') ?: 'postgres',
+            'user' => rawurldecode($parts['user']),
+            'password' => rawurldecode($parts['pass']),
+            'sslmode' => (string) ($query['sslmode'] ?? 'require'),
+        ];
+    }
+
+    private static function testConnection(string $dsn, string $user, string $password): void
+    {
+        try {
+            $pdo = new \PDO($dsn, $user, $password, [
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+            ]);
+            $pdo = null;
+        } catch (\PDOException $error) {
+            throw new \RuntimeException('No se pudo conectar a Supabase: ' . $error->getMessage(), 0, $error);
+        }
+    }
+
     private static function env(string $key, ?string $default = null): string
     {
-        $value = $_ENV[$key] ?? getenv($key) ?: $default;
+        $value = self::optionalEnv($key) ?? $default;
 
         if ($value === null || $value === '') {
             throw new \RuntimeException("Falta configurar {$key} en el archivo .env.");
+        }
+
+        return $value;
+    }
+
+    private static function optionalEnv(string $key): ?string
+    {
+        $value = $_ENV[$key] ?? getenv($key) ?: null;
+
+        if ($value === null || $value === '') {
+            return null;
         }
 
         return $value;

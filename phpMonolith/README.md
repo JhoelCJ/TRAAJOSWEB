@@ -76,6 +76,14 @@ Abre:
 ```text
 APP_ENV=production
 APP_DEBUG=false
+SUPABASE_DATABASE_URL=postgresql://postgres.TU_PROJECT_REF:tu_password_de_base_de_datos@aws-0-TU_REGION.pooler.supabase.com:5432/postgres?sslmode=require
+```
+
+Tambien puedes usar variables separadas:
+
+```text
+APP_ENV=production
+APP_DEBUG=false
 SUPABASE_DB_HOST=aws-0-TU_REGION.pooler.supabase.com
 SUPABASE_DB_PORT=5432
 SUPABASE_DB_NAME=postgres
