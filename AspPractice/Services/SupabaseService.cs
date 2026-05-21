@@ -69,14 +69,7 @@ namespace EmployeeManagement.Services
                 request.Headers.Add("Prefer", "return=representation");
 
                 var resp = await _httpClient.SendAsync(request);
-
-                if (!resp.IsSuccessStatusCode) 
-                {
-                    var errorContent = await resp.Content.ReadAsStringAsync();
-                    Console.WriteLine($"[CRITICAL] Error de Supabase ({resp.StatusCode}): {errorContent}");
-                    return null;
-                }
-                
+                if (!resp.IsSuccessStatusCode) return null;
 
                 var created = await resp.Content.ReadFromJsonAsync<List<Employee>>();
                 return created?.FirstOrDefault();
