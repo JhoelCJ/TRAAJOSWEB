@@ -6,5 +6,7 @@
 .vscode
 scratch
 vendor
+node_modules
+dist
 storage/sessions/sess_*
 *.log

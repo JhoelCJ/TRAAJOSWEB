@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #f6f7f4;
+  color: #18251d;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.auth-card,
+.hero {
+  width: min(100%, 440px);
+  background: #ffffff;
+  border: 1px solid #e6eadf;
+  border-radius: 8px;
+  box-shadow: 0 24px 60px rgba(18, 31, 23, 0.12);
+  padding: 36px;
+  text-align: center;
+}
+
+.logo {
+  width: 96px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+p {
+  color: #667066;
+  line-height: 1.5;
+}
+
+.google-button,
+.primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: #1a4731;
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.google-button {
+  margin-top: 18px;
+}
+
+.error {
+  margin-top: 18px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #fff1f1;
+  color: #b42318;
+  font-size: 14px;
+  font-weight: 700;
+}
