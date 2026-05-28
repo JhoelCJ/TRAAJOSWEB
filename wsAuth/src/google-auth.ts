@@ -1,4 +1,5 @@
 import crypto from "node:crypto";
+import { ensureDatabase } from "./database.js";
 import { prisma } from "./prisma.js";
 
 type GoogleTokenResponse = {
@@ -30,6 +31,7 @@ export function buildGoogleAuthorizationUrl(state: string): string {
 
 export async function signInWithGoogle(code: string) {
   assertGoogleConfig();
+  await ensureDatabase();
 
   const tokenResponse = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
