@@ -1,0 +1,10 @@
+.env
+.env.local
+.git
+.gitignore
+.idea
+.vscode
+scratch
+vendor
+storage/sessions/sess_*
+*.log
