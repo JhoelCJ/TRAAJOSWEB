@@ -3,7 +3,7 @@ import express from 'express';
 import session from 'express-session';
 import passport from 'passport';
 import './config/passport'; // Your passport strategy file
-import authRoutes from './routes/auth';
+import authRoutes from './routes/authRoutes';
 
 const app = express();
 
