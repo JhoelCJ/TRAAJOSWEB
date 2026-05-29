@@ -2,7 +2,7 @@
   <div class="login-wrapper">
     <div class="login-card">
       
-      <img src="img/logoRestaurantGreen.png" alt="Logo de Biconoir's Restaurant" class="logo" />
+      <img src="/logoRestaurantGreen.png" alt="Logo de Biconoir's Restaurant" class="logo" />
 
       <h2>Bienvenido a Biconoir's Restaurant</h2>
       <p class="subtitle">Por favor, inicie sesión para continuar.</p>
