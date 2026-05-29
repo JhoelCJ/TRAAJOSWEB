@@ -7,7 +7,8 @@ import authRoutes from './routes/authRoutes';
 
 const app = express();
 
-// Set up session with your 60-second limit from Render
+app.set('trust proxy', 1); 
+
 const sessionLifetimeSeconds = parseInt(process.env.SESSION_LIFETIME_SECONDS || '60', 10);
 
 app.use(session({

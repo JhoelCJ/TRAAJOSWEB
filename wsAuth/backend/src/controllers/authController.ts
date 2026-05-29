@@ -1,8 +1,12 @@
 import { Request, Response } from 'express';
 
 export const handleGoogleCallback = (req: Request, res: Response) => {
+  const baseUrl = process.env.PUBLIC_BASE_URL || 'http://localhost:5173';
+  
+  const redirectUrl = baseUrl.replace(/\/$/, '') + '/home';
+  
   // Successful authentication, redirect to the Vue frontend home
-  res.redirect(process.env.PUBLIC_BASE_URL || 'http://localhost:5173/home');
+  res.redirect(redirectUrl);
 };
 
 export const checkSessionStatus = (req: Request, res: Response) => {
