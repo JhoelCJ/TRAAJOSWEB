@@ -9,11 +9,11 @@ datasource db {
 
 model User {
   id            String   @id @default(uuid()) @db.Uuid
-  google_id     String?  @unique
+  google_id     String   @unique
   name          String
   email         String   @unique
-  profile_image String?
+  profile_image String?  
   created_at    DateTime @default(now())
 
-  @@map("users")
+  @@map("users") 
 }
