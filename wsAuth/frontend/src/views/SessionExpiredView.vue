@@ -1,10 +1,10 @@
 <template>
   <div class="expired-container">
-    <h2>Su sesión ha expirado</h2>
-    <p>Por motivos de seguridad, debe volver a autenticarse.</p>
+    <h2>Your session has expired</h2>
+    <p>For security reasons, please authenticate again.</p>
     
     <button @click="goToLogin" class="relogin-btn">
-      Ingresar nuevamente
+      Log in again
     </button>
   </div>
 </template>

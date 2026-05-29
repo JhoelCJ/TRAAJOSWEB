@@ -4,8 +4,8 @@
       
       <img src="/logoRestaurantGreen.png" alt="Logo de Biconoir's Restaurant" class="logo" />
 
-      <h2>Bienvenido a Biconoir's Restaurant</h2>
-      <p class="subtitle">Por favor, inicie sesión para continuar.</p>
+      <h2>Welcome to Biconoir's Restaurant</h2>
+      <p class="subtitle">Please log in to continue.</p>
       
       <a href="/api/auth/google" class="google-btn">
         <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
@@ -14,7 +14,7 @@
           <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
           <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
         </svg>
-        Ingresar con Google
+        Sign in with Google
       </a>
       
     </div>
@@ -22,7 +22,6 @@
 </template>
 
 <script setup lang="ts">
-// La lógica de autenticación la maneja el backend mediante el enlace href
 </script>
 
 <style scoped>
@@ -31,24 +30,24 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background-color: #f4f7f6; /* Fondo gris claro */
+  background-color: #f4f7f6;
 }
 
 .login-card {
   background: white;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Sombra suave para el efecto tarjeta */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
   text-align: center;
   max-width: 420px;
   width: 90%;
 }
 
 .logo {
-  width: 140px; /* Ajusta este tamaño según las proporciones de tu logo */
+  width: 140px;
   height: auto;
   margin-bottom: 24px;
-  border-radius: 8px; /* Opcional: quita esto si tu logo ya es circular o tiene fondo transparente */
+  border-radius: 8px; 
 }
 
 h2 {
