@@ -32,6 +32,6 @@ app.use((req, res, next) => {
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 
 export default app;
