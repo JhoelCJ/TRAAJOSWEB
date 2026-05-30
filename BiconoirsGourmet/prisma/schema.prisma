@@ -1,0 +1,166 @@
+// prisma/schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  user_id           String         @id @default(cuid())
+  name              String
+  email             String         @unique
+  phone             String?
+  password_hash     String
+  role              String         @default("customer") // customer, admin, staff
+  created_at        DateTime       @default(now())
+  updated_at        DateTime       @updatedAt
+  
+  reservations      Reservation[]
+  orders            Order[]
+  surveys           Survey[]
+  auditLogs         AuditLog[]
+
+  @@table("users")
+}
+
+model Dish {
+  dish_id           String         @id @default(cuid())
+  name              String
+  description       String?
+  price             Decimal        @db.Decimal(10, 2)
+  image_url         String?
+  category          String
+  is_available      Boolean        @default(true)
+  created_at        DateTime       @default(now())
+  updated_at        DateTime       @updatedAt
+  
+  orderDetails      OrderDetail[]
+  inventoryBatches  InventoryBatch[]
+
+  @@table("dishes")
+}
+
+model Ingredient {
+  ingredient_id     String         @id @default(cuid())
+  name              String         @unique
+  unit              String
+  current_stock     Decimal        @db.Decimal(10, 2)
+  min_stock         Decimal        @db.Decimal(10, 2)
+  supplier          String?
+  created_at        DateTime       @default(now())
+  updated_at        DateTime       @updatedAt
+  
+  inventoryBatches  InventoryBatch[]
+
+  @@table("ingredients")
+}
+
+model InventoryBatch {
+  batch_id          String         @id @default(cuid())
+  ingredient_id     String
+  ingredient        Ingredient     @relation(fields: [ingredient_id], references: [ingredient_id], onDelete: Cascade)
+  dish_id           String?
+  dish              Dish?          @relation(fields: [dish_id], references: [dish_id], onDelete: SetNull)
+  quantity          Decimal        @db.Decimal(10, 2)
+  expiry_date       DateTime?
+  created_at        DateTime       @default(now())
+  updated_at        DateTime       @updatedAt
+
+  @@table("inventory_batches")
+  @@index([ingredient_id])
+  @@index([dish_id])
+}
+
+model Order {
+  order_id          String         @id @default(cuid())
+  customer_id       String
+  customer          User           @relation(fields: [customer_id], references: [user_id], onDelete: Cascade)
+  total_amount      Decimal        @db.Decimal(10, 2)
+  status            String         @default("Pending") // Pending, Confirmed, Completed, Cancelled
+  order_date        DateTime       @default(now())
+  delivery_date     DateTime?
+  created_at        DateTime       @default(now())
+  updated_at        DateTime       @updatedAt
+  
+  orderDetails      OrderDetail[]
+  financialReports  FinancialReport[]
+
+  @@table("orders")
+  @@index([customer_id])
+}
+
+model OrderDetail {
+  detail_id         String         @id @default(cuid())
+  order_id          String
+  order             Order          @relation(fields: [order_id], references: [order_id], onDelete: Cascade)
+  dish_id           String
+  dish              Dish           @relation(fields: [dish_id], references: [dish_id], onDelete: Restrict)
+  quantity          Int
+  unit_price        Decimal        @db.Decimal(10, 2)
+  subtotal          Decimal        @db.Decimal(10, 2)
+  created_at        DateTime       @default(now())
+
+  @@table("order_details")
+  @@index([order_id])
+  @@index([dish_id])
+}
+
+model Reservation {
+  reservation_id    String         @id @default(cuid())
+  customer_id       String
+  customer          User           @relation(fields: [customer_id], references: [user_id], onDelete: Cascade)
+  reservation_date  DateTime
+  party_size        Int
+  status            String         @default("Pending") // Pending, Confirmed, Cancelled, Completed
+  special_requests  String?
+  created_at        DateTime       @default(now())
+  updated_at        DateTime       @updatedAt
+
+  @@table("reservations")
+  @@index([customer_id])
+}
+
+model Survey {
+  survey_id         String         @id @default(cuid())
+  customer_id       String
+  customer          User           @relation(fields: [customer_id], references: [user_id], onDelete: Cascade)
+  rating            Int            @db.SmallInt
+  comments          String?
+  submitted_at      DateTime       @default(now())
+  created_at        DateTime       @default(now())
+
+  @@table("surveys")
+  @@index([customer_id])
+}
+
+model FinancialReport {
+  report_id         String         @id @default(cuid())
+  order_id          String
+  order             Order          @relation(fields: [order_id], references: [order_id], onDelete: Cascade)
+  revenue           Decimal        @db.Decimal(12, 2)
+  costs             Decimal        @db.Decimal(12, 2)
+  profit            Decimal        @db.Decimal(12, 2)
+  report_date       DateTime       @default(now())
+  created_at        DateTime       @default(now())
+
+  @@table("financial_reports")
+  @@index([order_id])
+}
+
+model AuditLog {
+  log_id            String         @id @default(cuid())
+  user_id           String
+  user              User           @relation(fields: [user_id], references: [user_id], onDelete: Cascade)
+  action            String
+  table_name        String
+  record_id         String
+  old_values        String?        @db.Text
+  new_values        String?        @db.Text
+  created_at        DateTime       @default(now())
+
+  @@table("audit_logs")
+  @@index([user_id])
+}
