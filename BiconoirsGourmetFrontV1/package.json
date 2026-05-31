@@ -1,0 +1,29 @@
+{
+  "name": "biconoir-restaurant",
+  "version": "1.0.0",
+  "description": "Restaurant Management System - TypeScript + Vue 3 + Prisma",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts,.vue"
+  },
+  "dependencies": {
+    "vue": "^3.4.21",
+    "vue-router": "^4.3.2",
+    "pinia": "^2.1.7",
+    "axios": "^1.6.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/bcryptjs": "^2.4.6",
+    "typescript": "^5.3.3",
+    "tsx": "^4.7.0",
+    "vite": "^5.0.10",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/tsconfig": "^0.5.1",
+    "concurrently": "^8.2.2"
+  }
+}
