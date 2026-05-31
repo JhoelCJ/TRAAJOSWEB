@@ -59,8 +59,8 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { useOrders } from '@composables/useOrders';
-import { useUserStore } from '@stores/userStore';
+import { useOrders } from '../composables/useOrders';
+import { useUserStore } from '../stores/userStore';
 import { formatPrice, formatDate, getStatusLabel } from '@utils/formatters';
 
 const ordersStore = useOrders();

@@ -68,10 +68,10 @@
 </template>
 
 <script setup lang="ts">
-import { useCartStore } from '@stores/cartStore';
-import { useUserStore } from '@stores/userStore';
+import { useCartStore } from '../stores/cartStore';
+import { useUserStore } from '../stores/userStore';
 import { useRouter } from 'vue-router';
-import { formatPrice } from '@utils/formatters';
+import { formatPrice } from '../utils/formatters';
 
 const cartStore = useCartStore();
 const userStore = useUserStore();

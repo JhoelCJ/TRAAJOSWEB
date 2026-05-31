@@ -107,9 +107,9 @@
 
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { useReservations } from '@composables/useReservations';
-import { useUserStore } from '@stores/userStore';
-import { formatDate, formatTime, getStatusLabel } from '@utils/formatters';
+import { useReservations } from '../composables/useReservations';
+import { useUserStore } from '../stores/userStore';
+import { formatDate, formatTime, getStatusLabel } from '../utils/formatters';
 
 const reservationsStore = useReservations();
 const userStore = useUserStore();
