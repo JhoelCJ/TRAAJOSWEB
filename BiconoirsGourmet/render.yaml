@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: biconoir-gourmet
+    env: node
+    region: ohio
+    plan: free
+    
+    buildCommand: npm install && npm run prisma:generate && npm run client:build && npm run server:build
+    
+    startCommand: node dist/server.js
+    
+    autoDeploy: true
+    
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        value: "postgresql://postgres.xxxxx:PASSWORD@aws-0-us-east-1.pooler.supabase.com:5432/postgres?schema=public"
+      - key: JWT_SECRET
+        value: "genera-esto-con-node-e-console-log-require-crypto-randombytes-32-tostring-hex"
