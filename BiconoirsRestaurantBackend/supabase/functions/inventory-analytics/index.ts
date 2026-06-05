@@ -30,7 +30,6 @@ app.use('*', async (c, next) => {
   await next()
 })
 
-//Inventory Catalog
 app.get('/inventory', async (c) => {
   const supabase = c.get('supabase')
 const { data, error } = await supabase
