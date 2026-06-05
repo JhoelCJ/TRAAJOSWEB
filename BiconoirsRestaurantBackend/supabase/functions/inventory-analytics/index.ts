@@ -1,13 +1,12 @@
 import { Hono } from 'https://deno.land/x/hono@v4.3.11/mod.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.42.0'
-import { Database } from '../_shared/types/supabase.ts'
 
-const app = new Hono()
+const app = new Hono().basePath('/inventory-analytics')
 
 app.use('*', async (c, next) => {
-  const supabase = createClient<Database>(
-    Deno.env.get('SUPABASE_URL') ?? '',
-    Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+  const supabase = createClient(
+    Deno.env.get('MI_SUPABASE_URL') ?? '',
+    Deno.env.get('MI_SUPABASE_ANON_KEY') ?? '',
     { global: { headers: { Authorization: c.req.header('Authorization') || '' } } }
   )
   
@@ -17,22 +16,14 @@ app.use('*', async (c, next) => {
     return c.json({ error: 'Unauthorized' }, 401)
   }
 
-    .from('profiles')
-    .select('role')
-    .eq('id', user.id)
-    .single()
-
-  if (profile?.role !== 'admin') {
-    return c.json({ error: 'Forbidden. Admin access required.' }, 403)
-  }
-
   c.set('supabase', supabase)
   await next()
 })
 
 app.get('/inventory', async (c) => {
   const supabase = c.get('supabase')
-const { data, error } = await supabase
+
+  const { data, error } = await supabase
     .from('inventory')
     .select('id, ingredient_name, current_stock, unit, reorder_level, supplier, expiry_date') 
 

@@ -1,13 +1,12 @@
 import { Hono } from 'https://deno.land/x/hono@v4.3.11/mod.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.42.0'
-import { Database } from '../_shared/types/supabase.ts'
 
-const app = new Hono()
+const app = new Hono().basePath('/orders-reservations')
 
 app.use('*', async (c, next) => {
-  const supabase = createClient<Database>(
-    Deno.env.get('SUPABASE_URL') ?? '',
-    Deno.env.get('SUPABASE_ANON_KEY') ?? '',
+  const supabase = createClient(
+    Deno.env.get('MI_SUPABASE_URL') ?? '',
+    Deno.env.get('MI_SUPABASE_ANON_KEY') ?? '',
     { global: { headers: { Authorization: c.req.header('Authorization') || '' } } }
   )
   
@@ -28,7 +27,7 @@ app.get('/orders', async (c) => {
 
   const { data, error } = await supabase
     .from('orders')
-    .select('*, order_items(*)')
+    .select('*, order_items(quantity, dishes(name, price))') 
     .eq('user_id', user.id)
 
   if (error) return c.json({ error: error.message }, 500)
@@ -41,7 +40,7 @@ app.get('/orders/:orderId', async (c) => {
 
   const { data, error } = await supabase
     .from('orders')
-    .select('*, order_items(*, dishes(name, price))')
+    .select('*, order_items(quantity, dishes(name, price))')
     .eq('id', orderId)
     .single()
 
@@ -82,7 +81,7 @@ app.get('/cart', async (c) => {
 
   const { data, error } = await supabase
     .from('cart')
-    .select('*, cart_items(*, dishes(name, price))')
+    .select('*, cart_items(quantity, dishes(name, price))')
     .eq('user_id', user.id)
     .single()
 
