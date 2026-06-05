@@ -22,7 +22,6 @@ app.use('*', async (c, next) => {
   await next()
 })
 
-// User Orders List
 app.get('/orders', async (c) => {
   const supabase = c.get('supabase')
   const user = c.get('user')
@@ -36,7 +35,6 @@ app.get('/orders', async (c) => {
   return c.json({ data }, 200)
 })
 
-//Order Details
 app.get('/orders/:orderId', async (c) => {
   const supabase = c.get('supabase')
   const orderId = c.req.param('orderId')
@@ -51,7 +49,6 @@ app.get('/orders/:orderId', async (c) => {
   return c.json({ data }, 200)
 })
 
-//List User Reservations
 app.get('/reservations', async (c) => {
   const supabase = c.get('supabase')
   const user = c.get('user')
@@ -65,7 +62,6 @@ app.get('/reservations', async (c) => {
   return c.json({ data }, 200)
 })
 
-//Reservation Details
 app.get('/reservations/:reservationId', async (c) => {
   const supabase = c.get('supabase')
   const reservationId = c.req.param('reservationId')
@@ -80,7 +76,6 @@ app.get('/reservations/:reservationId', async (c) => {
   return c.json({ data }, 200)
 })
 
-// View Cart
 app.get('/cart', async (c) => {
   const supabase = c.get('supabase')
   const user = c.get('user')
