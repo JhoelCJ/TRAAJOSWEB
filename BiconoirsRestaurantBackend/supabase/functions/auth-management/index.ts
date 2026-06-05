@@ -2,67 +2,51 @@ import { Hono } from 'https://deno.land/x/hono@v3.4.1/mod.ts'
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.39.0'
 import { Database } from '../_shared/types/supabase.ts'
 
-const supabase = createClient<Database>(
-  Deno.env.get('SUPABASE_URL')!,
-  Deno.env.get('SUPABASE_ANON_KEY')!
-)
+const supabaseUrl = Deno.env.get('REAL_URL')!
+const supabaseSecretKey = Deno.env.get('REAL_KEY')! 
 
-const app = new Hono()
+const supabase = createClient<Database>(supabaseUrl, supabaseSecretKey, {
+  auth: {
+    persistSession: false,
+    autoRefreshToken: false
+  },
+  global: {
+    headers: {
+      Authorization: `Bearer ${supabaseSecretKey}`
+    }
+  }
+})
+
+const app = new Hono().basePath('/auth-management')
 
 app.get('/auth/me', async (c) => {
-  const authHeader = c.req.header('Authorization')
-  if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    return c.json({ error: 'Missing or invalid Authorization header' }, 401)
+  try {
+    const { data, error } = await supabase.from('users').select('*').limit(1).single()
+    if (error) return c.json({ error: error.message }, 500)
+    return c.json(data ?? {}, 200)
+  } catch (err: any) {
+    return c.json({ error: err.message }, 500)
   }
-
-  const token = authHeader.slice(7)
-
-  const { data: { user: authUser }, error: authError } = await supabase.auth.getUser(token)
-  if (authError || !authUser) {
-    return c.json({ error: 'Invalid or expired token' }, 401)
-  }
-
-  const { data: userData, error: dbError } = await supabase
-    .from('users')
-    .select('*')
-    .eq('user_id', authUser.id)
-    .single()
-
-  if (dbError || !userData) {
-    return c.json({ error: 'User not found in database' }, 404)
-  }
-
-  const { password_hash, ...safeUser } = userData
-
-  return c.json(safeUser, 200)
 })
 
-app.get('/customers/:customerId/orders', async (c) => {
-  const customerId = c.req.param('customerId')
-  const status = c.req.query('status')
+app.get('/customer/:customerId/orders', async (c) => {
+  try {
+    const customerId = c.req.param('customerId')
+    
+    const { data, error } = await supabase
+      .from('orders')
+      .select('order_id, customer_name, customer_email')
+      .ilike('customer_name', `%${customerId}%`) 
 
-  const { data: userData, error: userError } = await supabase
-    .from('users')
-    .select('email')
-    .eq('user_id', customerId)
-    .single()
-
-  if (userError || !userData) {
-    return c.json({ error: 'Customer not found' }, 404)
+    if (error) {
+      console.error("Supabase Orders Error:", error.message)
+      return c.json({ error: error.message }, 500)
+    }
+    
+    return c.json(data ?? [], 200)
+  } catch (err: any) {
+    return c.json({ error: err.message }, 500)
   }
-
-  let query = supabase
-    .from('orders')
-    .select('*')
-    .eq('customer_email', userData.email)
-
-  if (status) {
-    query = query.eq('status', status)
-  }
-
-  const { data: orders } = await query
-
-  return c.json(orders ?? [], 200)
 })
 
-export default app
+Deno.serve(app.fetch)
