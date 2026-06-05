@@ -6,7 +6,7 @@
     <section class="hero">
       <div class="container hero-content">
         <div class="logo-section">
-          <img src="@/assets/img/logoRestaurantGreen.png" alt="Biconoir Gourmet" class="hero-logo">
+          <img src="../assets/img/logoRestaurantGreen.png" alt="Biconoir Gourmet" class="hero-logo">
         </div>
         <h1>Biconoir Gourmet</h1>
         <p>Experiencia culinaria de clase mundial</p>
@@ -17,7 +17,7 @@
     <!-- Restaurant Image Section -->
     <section class="restaurant-section">
       <div class="container">
-        <img src="@/assets/img/restaurant.jpg" alt="Nuestro Restaurante" class="restaurant-image">
+        <img src="../assets/img/restaurant.jpg" alt="Nuestro Restaurante" class="restaurant-image">
       </div>
     </section>
 
@@ -27,7 +27,7 @@
         <h2>Platos Destacados</h2>
         <div class="dishes-grid">
           <div class="dish-card">
-            <img src="@/assets/img/food1.jpg" alt="Plato 1" class="dish-image">
+            <img src="../assets/img/food1.jpg" alt="Plato 1" class="dish-image">
             <div class="dish-info">
               <h3>Plato Premium</h3>
               <p>Preparación exclusiva del chef</p>
@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="dish-card">
-            <img src="@/assets/img/food2.jpg" alt="Plato 2" class="dish-image">
+            <img src="../assets/img/food2.jpg" alt="Plato 2" class="dish-image">
             <div class="dish-info">
               <h3>Especialidad Gourmet</h3>
               <p>Con ingredientes frescos seleccionados</p>
@@ -43,7 +43,7 @@
             </div>
           </div>
           <div class="dish-card">
-            <img src="@/assets/img/food3.jpg" alt="Plato 3" class="dish-image">
+            <img src="../assets/img/food3.jpg" alt="Plato 3" class="dish-image">
             <div class="dish-info">
               <h3>Creación del Día</h3>
               <p>Chef's special de temporada</p>

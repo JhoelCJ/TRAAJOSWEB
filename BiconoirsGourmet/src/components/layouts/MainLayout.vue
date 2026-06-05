@@ -5,7 +5,7 @@
     <nav class="navbar">
       <div class="container nav-container">
         <router-link to="/" class="logo-section">
-          <img src="@/assets/img/logoRestaurantGreen.png" alt="Biconoir Gourmet" class="logo-image">
+          <img src="../assets/img/logoRestaurantGreen.png" alt="Biconoir Gourmet" class="logo-image">
           <span class="logo-text">Biconoir Gourmet</span>
         </router-link>
         
