@@ -29,9 +29,9 @@ async function loadCustomers() {
         document.getElementById('loading').style.display = 'none';
         document.getElementById('error-container').innerHTML = `
             <div class="error-message">
-                <strong>Error al cargar los datos:</strong> ${error.message}
+                <strong>Error loading data</strong> ${error.message}
                 <br>
-                <small>Asegúrate de que el servidor está corriendo.</small>
+                <small>Make sure the server is running.</small>
             </div>
         `;
     }
