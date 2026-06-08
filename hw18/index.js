@@ -1,4 +1,5 @@
 // Jilmar Calderon
+require('dotenv').config();
 const port = process.env.PORT || 3003; 
 const express = require("express");
 const cors = require("cors");
