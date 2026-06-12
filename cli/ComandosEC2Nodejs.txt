@@ -1,0 +1,55 @@
+//Clonar sin descargar el contenido
+git clone --no-checkout https://github.com/JhoelCJ/TRAAJOSWEB.git
+
+//Entrar a la carpeta del repositorio
+cd TRAAJOSWEB
+
+//Inicializar la descarga selectiva
+git sparse-checkout init --cone
+
+//Indicar la carpeta exacta
+git sparse-checkout set wsCellphone
+
+//Descargar los archivos
+git checkout main
+
+//Ver la carpeta que se descargo
+ls
+
+//Entrar a la carpeta
+cd wsCellphone
+
+//Asegúrate de estar dentro de la carpeta de tu proyecto antes de empezar
+cd tu-repositorio/wsCellphone
+
+//Crear y configurar el archivo .env
+nano .env
+
+//Contenido .env
+# Configuración del servidor
+PORT=4003
+
+# URLs de Supabase (Usando Transaction Pooler IPv4)
+DATABASE_URL="postgresql://postgres.kljlrchsawiteqearbgy:[TU-CONTRASEÑA]@aws-1-us-east-2.pooler.supabase.com:6543/postgres?pgbouncer=true"
+DIRECT_URL="postgresql://postgres.kljlrchsawiteqearbgy:[TU-CONTRASEÑA]@aws-1-us-east-2.pooler.supabase.com:5432/postgres"
+
+Ctrl + O, Enter, Ctrl + X
+
+//Instalar dependencias
+npm install
+
+//Generar el cliente de Prisma
+npx prisma generate
+
+//Instalar PM2 globalmente
+sudo npm install -g pm2
+
+//Iniciar la aplicación
+pm2 start index.js --name "api-celulares"
+
+//Guardar el estado (Opcional pero muy recomendado)
+pm2 save
+pm2 startup
+
+//Opcional ver los registros (logs) en tiempo real con este comando
+pm2 logs api-celulares
