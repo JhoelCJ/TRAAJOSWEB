@@ -192,76 +192,72 @@ async function calculateCartTotals() {
 </script>
 
 <template>
-  <div className="app-container">
+  <div class="app-container">
     <!-- Header -->
-    <header className="app-header">
-      <div className="header-brand">
+    <header class="app-header">
+      <div class="header-brand">
         <h1>TechStore</h1>
-        <p className="subtitle">Premium Computer Solutions (Vue.js)</p>
-      </div>
-      <div className="api-badge">
-        <span className="dot"></span> API: {{ API_BASE_URL }}
       </div>
     </header>
 
     <!-- Tabs Selector -->
-    <nav className="tab-navigation">
+    <nav class="tab-navigation">
       <button 
-        :className="['tab-btn', { active: activeTab === 'search' }]"
+        :class="['tab-btn', { active: activeTab === 'search' }]"
         @click="activeTab = 'search'"
       >
-        🔍 Search Products
+        Search Products
       </button>
       <button 
-        :className="['tab-btn', { active: activeTab === 'cart' }]"
+        :class="['tab-btn', { active: activeTab === 'cart' }]"
         @click="activeTab = 'cart'"
       >
-        🛒 Shopping Cart ({{ cart.reduce((sum, item) => sum + item.quantity, 0) }})
+        Shopping Cart ({{ cart.reduce((sum, item) => sum + item.quantity, 0) }})
       </button>
     </nav>
 
     <!-- Main Content Area -->
-    <main className="app-content">
+    <main class="app-content">
       
       <!-- Tab 1: Search Products -->
-      <div v-if="activeTab === 'search'" className="tab-pane">
-        <div className="section-header">
+      <div v-if="activeTab === 'search'" class="tab-pane">
+        <div class="section-header">
           <h2>Computer Inventory</h2>
-          <form @submit.prevent="handleSearchSubmit" className="search-form">
+          <form @submit.prevent="handleSearchSubmit" class="search-form">
             <input 
               type="text" 
               placeholder="Search by model, brand or specs..."
               v-model="searchQuery"
-              className="search-input"
+              class="search-input"
             />
-            <button type="submit" className="btn btn-primary">Search</button>
+            <button type="submit" class="btn btn-primary">Search</button>
             <button 
               v-if="searchQuery" 
               type="button" 
               @click="handleClearSearch" 
-              className="btn btn-secondary"
+              class="btn btn-secondary"
             >
               Clear
             </button>
           </form>
         </div>
 
-        <div v-if="loading" className="loading-spinner">
+        <div v-if="loading" class="loading-spinner">
           Loading products database...
         </div>
 
-        <div v-else-if="error" className="error-card">
-          <p>⚠️ Error: {{ error }}</p>
-          <button @click="fetchProducts(searchQuery)" className="btn btn-secondary btn-sm">Try Again</button>
+        <div v-else-if="error" class="error-card">
+          <p>Error: {{ error }}</p>
+          <button @click="fetchProducts(searchQuery)" class="btn btn-secondary btn-sm">Try Again</button>
         </div>
 
-        <div v-else-if="products.length === 0" className="empty-state">
+        <div v-else-if="products.length === 0" class="empty-state">
           <p>No computer products found matching "{{ searchQuery }}".</p>
-          <button @click="handleClearSearch" className="btn btn-secondary btn-sm">Show All Products</button>
+          <button @click="handleClearSearch" class="btn btn-secondary btn-sm">Show All Products</button>
         </div>
 
-        <div v-else className="table-responsive">
-          <table className="data-table">
+        <div v-else class="table-responsive">
+          <table class="data-table">
             <thead>
               <tr>
                 <th>ID</th>
@@ -269,35 +265,35 @@ async function calculateCartTotals() {
                 <th>Category</th>
                 <th>Specs & Description</th>
                 <th>Price</th>
-                <th className="text-center">Actions</th>
+                <th class="text-center">Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="product in products" :key="product.id">
                 <td>#{{ product.id }}</td>
-                <td className="font-semibold">{{ product.name }}</td>
-                <td><span className="category-badge">{{ product.category }}</span></td>
-                <td className="text-muted text-sm">{{ product.description }}</td>
-                <td className="font-mono font-semibold">${{ product.price.toFixed(2) }}</td>
+                <td class="font-semibold">{{ product.name }}</td>
+                <td><span class="category-badge">{{ product.category }}</span></td>
+                <td class="text-muted text-sm">{{ product.description }}</td>
+                <td class="font-mono font-semibold">${{ product.price.toFixed(2) }}</td>
                 <td>
-                  <div className="action-buttons">
+                  <div class="action-buttons">
                     <button 
                       @click="handleCalculateIva(product)"
-                      className="btn btn-outline-info btn-xs"
+                      class="btn btn-outline-info btn-xs"
                       title="Calculate 15% IVA for this item"
                     >
                       Calc IVA
                     </button>
                     <button 
                       @click="handleOpenExpiry(product)"
-                      className="btn btn-outline-warning btn-xs"
+                      class="btn btn-outline-warning btn-xs"
                       title="Check expiration time remaining"
                     >
                       Check Expiry
                     </button>
                     <button 
                       @click="handleAddToCart(product)"
-                      className="btn btn-success btn-xs"
+                      class="btn btn-success btn-xs"
                       title="Add item to shopping cart"
                     >
                       + Add to Cart
@@ -310,31 +306,31 @@ async function calculateCartTotals() {
         </div>
 
         <!-- Popups/Modals Widgets -->
-        <div className="calculator-widgets">
+        <div class="calculator-widgets">
           <!-- IVA Result Widget -->
-          <div v-if="ivaResult" className="widget-card info-card">
-            <div className="widget-header">
-              <h3>📊 IVA Calculation Result</h3>
-              <button className="close-btn" @click="ivaResult = null">&times;</button>
+          <div v-if="ivaResult" class="widget-card info-card">
+            <div class="widget-header">
+              <h3>IVA Calculation Result</h3>
+              <button class="close-btn" @click="ivaResult = null">&times;</button>
             </div>
-            <div className="widget-body">
+            <div class="widget-body">
               <p><strong>Product:</strong> {{ ivaResult.productName }}</p>
               <p><strong>Base Price:</strong> ${{ ivaResult.price.toFixed(2) }}</p>
               <p><strong>IVA Rate:</strong> {{ (ivaResult.ivaRate * 100).toFixed(0) }}%</p>
-              <p className="highlight-text"><strong>Calculated IVA Amount:</strong> ${{ ivaResult.ivaAmount.toFixed(2) }}</p>
+              <p class="highlight-text"><strong>Calculated IVA Amount:</strong> ${{ ivaResult.ivaAmount.toFixed(2) }}</p>
             </div>
           </div>
 
           <!-- Expiration Calculator Widget -->
-          <div v-if="expiryProduct" className="widget-card warning-card">
-            <div className="widget-header">
-              <h3>📅 Check Expiration Time</h3>
-              <button className="close-btn" @click="expiryProduct = null">&times;</button>
+          <div v-if="expiryProduct" class="widget-card warning-card">
+            <div class="widget-header">
+              <h3>Check Expiration Time</h3>
+              <button class="close-btn" @click="expiryProduct = null">&times;</button>
             </div>
-            <form @submit.prevent="handleCalculateExpiration" className="widget-body">
-              <p className="text-sm text-muted">Enter expiration date for <strong>{{ expiryProduct.name }}</strong> to calculate days left.</p>
-              <div className="date-inputs">
-                <div className="input-group">
+            <form @submit.prevent="handleCalculateExpiration" class="widget-body">
+              <p class="text-sm text-muted">Enter expiration date for <strong>{{ expiryProduct.name }}</strong> to calculate days left.</p>
+              <div class="date-inputs">
+                <div class="input-group">
                   <label>Day</label>
                   <input 
                     type="number" 
@@ -344,7 +340,7 @@ async function calculateCartTotals() {
                     v-model="expiryInputs.day"
                   />
                 </div>
-                <div className="input-group">
+                <div class="input-group">
                   <label>Month</label>
                   <input 
                     type="number" 
@@ -354,7 +350,7 @@ async function calculateCartTotals() {
                     v-model="expiryInputs.month"
                   />
                 </div>
-                <div className="input-group">
+                <div class="input-group">
                   <label>Year</label>
                   <input 
                     type="number" 
@@ -365,19 +361,19 @@ async function calculateCartTotals() {
                   />
                 </div>
               </div>
-              <button type="submit" className="btn btn-warning btn-sm w-full mt-3">Calculate Days Left</button>
+              <button type="submit" class="btn btn-warning btn-sm w-full mt-3">Calculate Days Left</button>
 
-              <div v-if="expiryResult" className="expiry-result-badge mt-3">
-                <span v-if="expiryResult.status === 'expired'" className="badge-danger">
+              <div v-if="expiryResult" class="expiry-result-badge mt-3">
+                <span v-if="expiryResult.status === 'expired'" class="badge-danger">
                   Expired {{ expiryResult.daysLeft }} days ago
                 </span>
-                <span v-else-if="expiryResult.status === 'expires today'" className="badge-warning">
+                <span v-else-if="expiryResult.status === 'expires today'" class="badge-warning">
                   Expires today!
                 </span>
-                <span v-else className="badge-success">
+                <span v-else class="badge-success">
                   {{ expiryResult.daysLeft }} days left to sell
                 </span>
-                <p className="text-xs text-muted mt-1">Target date: {{ expiryResult.expirationDate }}</p>
+                <p class="text-xs text-muted mt-1">Target date: {{ expiryResult.expirationDate }}</p>
               </div>
             </form>
           </div>
@@ -385,70 +381,69 @@ async function calculateCartTotals() {
       </div>
 
       <!-- Tab 2: Shopping Cart -->
-      <div v-if="activeTab === 'cart'" className="tab-pane">
-        <div className="section-header">
+      <div v-if="activeTab === 'cart'" class="tab-pane">
+        <div class="section-header">
           <h2>Your Shopping Cart</h2>
           <button 
             @click="activeTab = 'search'" 
-            className="btn btn-secondary btn-sm"
+            class="btn btn-secondary btn-sm"
           >
             &larr; Back to Shop
           </button>
         </div>
 
-        <div v-if="cart.length === 0" className="empty-cart-state">
-          <div className="icon">🛒</div>
+        <div v-if="cart.length === 0" class="empty-cart-state">
           <p>Your shopping cart is currently empty.</p>
-          <button @click="activeTab = 'search'" className="btn btn-primary">
+          <button @click="activeTab = 'search'" class="btn btn-primary">
             Browse Products
           </button>
         </div>
 
-        <div v-else className="cart-grid">
+        <div v-else class="cart-grid">
           <!-- Cart Items Table -->
-          <div className="table-responsive">
-            <table className="data-table">
+          <div class="table-responsive">
+            <table class="data-table">
               <thead>
                 <tr>
                   <th>Product Name</th>
                   <th>Price</th>
-                  <th className="text-center">Quantity</th>
+                  <th class="text-center">Quantity</th>
                   <th>IVA (15%)</th>
                   <th>Total</th>
-                  <th className="text-center">Action</th>
+                  <th class="text-center">Action</th>
                 </tr>
               </thead>
               <tbody>
                 <tr v-for="item in cart" :key="item.id">
-                  <td className="font-semibold">{{ item.name }}</td>
-                  <td className="font-mono">${{ item.price.toFixed(2) }}</td>
+                  <td class="font-semibold">{{ item.name }}</td>
+                  <td class="font-mono">${{ item.price.toFixed(2) }}</td>
                   <td>
-                    <div className="quantity-controls">
+                    <div class="quantity-controls">
                       <button 
                         @click="handleUpdateQuantity(item.id, -1)"
-                        className="qty-btn"
+                        class="qty-btn"
                       >
                         -
                       </button>
-                      <span className="qty-value font-semibold">{{ item.quantity }}</span>
+                      <span class="qty-value font-semibold">{{ item.quantity }}</span>
                       <button 
                         @click="handleUpdateQuantity(item.id, 1)"
-                        className="qty-btn"
+                        class="qty-btn"
                       >
                         +
                       </button>
                     </div>
                   </td>
-                  <td className="font-mono text-muted">
+                  <td class="font-mono text-muted">
                     ${{ (item.price * item.quantity * 0.15).toFixed(2) }}
                   </td>
-                  <td className="font-mono font-semibold">
+                  <td class="font-mono font-semibold">
                     ${{ (item.price * item.quantity * 1.15).toFixed(2) }}
                   </td>
-                  <td className="text-center">
+                  <td class="text-center">
                     <button 
                       @click="handleRemoveFromCart(item.id)"
-                      className="btn btn-danger btn-xs"
+                      class="btn btn-danger btn-xs"
                     >
                       Remove
                     </button>
@@ -459,24 +454,24 @@ async function calculateCartTotals() {
           </div>
 
           <!-- Cart Totals Summary -->
-          <div className="cart-summary-card">
+          <div class="cart-summary-card">
             <h3>Order Summary</h3>
-            <div className="summary-row">
+            <div class="summary-row">
               <span>Subtotal (Before Tax)</span>
-              <span className="font-mono">${{ cartTotals.subtotal.toFixed(2) }}</span>
+              <span class="font-mono">${{ cartTotals.subtotal.toFixed(2) }}</span>
             </div>
-            <div className="summary-row">
+            <div class="summary-row">
               <span>IVA Tax (15%)</span>
-              <span className="font-mono">${{ cartTotals.ivaTotal.toFixed(2) }}</span>
+              <span class="font-mono">${{ cartTotals.ivaTotal.toFixed(2) }}</span>
             </div>
-            <div className="summary-divider"></div>
-            <div className="summary-row grand-total">
+            <div class="summary-divider"></div>
+            <div class="summary-row grand-total">
               <span>Total Cost</span>
-              <span className="font-mono">${{ cartTotals.total.toFixed(2) }}</span>
+              <span class="font-mono">${{ cartTotals.total.toFixed(2) }}</span>
             </div>
             
-            <div className="checkout-note">
-              <p>💡 Total calculated in real-time by the backend API.</p>
+            <div class="checkout-note">
+              <p>Total calculated in real-time by the backend API.</p>
             </div>
           </div>
         </div>
@@ -485,9 +480,9 @@ async function calculateCartTotals() {
     </main>
 
     <!-- Footer -->
-    <footer className="app-footer">
+    <footer class="app-footer">
       <p>&copy; {{ new Date().getFullYear() }} TechStore Computer Systems. All Rights Reserved.</p>
-      <p className="text-xs text-muted">Built for Advanced Web Development Exam (Calderon)</p>
+      <p class="text-xs text-muted">Built for Advanced Web Development Exam (Calderon)</p>
     </footer>
   </div>
 </template>
